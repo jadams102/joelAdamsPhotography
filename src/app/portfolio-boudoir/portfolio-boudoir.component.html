@@ -1,3 +1,26 @@
-<p>
-  portfolio-boudoir works!
-</p>
+<div class="gallery-section">
+  <div class="container">
+    <div class="card">
+        <h1 class="card-title">Boudoir</h1>
+      <div class="card-body">
+        <ul>
+          <li *ngFor="let image of images | async" class="card">
+              <a (click)='goToImageDetail(image)'><img class="card-image" src="{{image.url}}"></a>
+
+            <div *ngIf='(user|async)?.uid'>
+
+            <div class="card-footer">
+                <button class="btn btn-danger" (click)='deleteImage(image)'>Delete Image</button>
+            </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf='(user|async)?.uid'>
+        <div class="card-footer">
+          <app-upload [galleryName]='Boudoir'></app-upload>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

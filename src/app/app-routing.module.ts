@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PortfolioBoudoirComponent } from './portfolio-boudoir/portfolio-boudoir.component';
 import { PortfolioPortraitComponent } from './portfolio-portrait/portfolio-portrait.component';
 import { PortfolioMusicComponent } from './portfolio-music/portfolio-music.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
     path: 'music',
     component: PortfolioMusicComponent
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
 ];
 
 @NgModule({

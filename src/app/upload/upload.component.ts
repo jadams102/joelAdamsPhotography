@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Upload } from '../models/upload.model';
+import { UploadService } from '../services/upload.service'
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-upload',
@@ -6,10 +9,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
+  @Input() galleryName;
 
-  constructor() { }
+  files: FileList;
+  upload: Upload;
+  addingImages: boolean;
+
+  constructor(private uploadService: UploadService, private imageService: ImageService) { 
+  }
 
   ngOnInit() {
+    this.addingImages = false;
+  }
+
+  toggleAddingImages() {
+    if(!this.addingImages) {
+      this.addingImages = true;
+    } else {
+      this.addingImages = false;
+    }
+  }
+
+  handleFiles(event){
+    this.files = event.target.files
+  }
+
+  uploadFiles(title: string, description: string){
+    this.uploadService.setUploadPath(this.galleryName.toLowerCase());
+    const filesToUpload = this.files;
+      this.upload = new Upload(filesToUpload[0]);
+      this.upload.name = title;
+      this.upload.description = description;
+      this.upload.gallery = this.galleryName;
+      this.uploadService.uploadFiles(this.upload);
   }
 
 }

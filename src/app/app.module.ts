@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,8 +12,23 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioBoudoirComponent } from './portfolio-boudoir/portfolio-boudoir.component';
 import { PortfolioMusicComponent } from './portfolio-music/portfolio-music.component';
 import { PortfolioPortraitComponent } from './portfolio-portrait/portfolio-portrait.component';
+import { ImageService } from './services/image.service';
+import { AuthenticationService } from './services/authentication.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { UploadService } from './services/upload.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { config }  from './api-keys';
 import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
+
+export const firebaseConfig = {
+  apiKey: config.apiKey,
+  authDomain: config.authDomain,
+  databaseURL: config.databaseURL,
+  storageBucket: config.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -24,13 +41,17 @@ import { LoginComponent } from './login/login.component';
     PortfolioMusicComponent,
     PortfolioPortraitComponent,
     UploadComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [ ImageService, AuthenticationService, AngularFireAuth, UploadService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
