@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { PortfolioBoudoirComponent } from './portfolio-boudoir/portfolio-boudoir.component';
 import { PortfolioMusicComponent } from './portfolio-music/portfolio-music.component';
 import { PortfolioPortraitComponent } from './portfolio-portrait/portfolio-portrait.component';
+import { UploadComponent } from './upload/upload.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PortfolioPortraitComponent } from './portfolio-portrait/portfolio-portr
     AboutComponent,
     PortfolioBoudoirComponent,
     PortfolioMusicComponent,
-    PortfolioPortraitComponent
+    PortfolioPortraitComponent,
+    UploadComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
