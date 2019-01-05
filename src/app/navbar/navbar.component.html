@@ -1,6 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Joel Adams Photography</a>
+    <a class="navbar-brand" href="#"><img src="../../assets/img/logo.png" alt=""></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -15,9 +15,9 @@
             Portfolio
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Boudoir</a>
-            <a class="dropdown-item" href="#">Portrait</a>
-            <a class="dropdown-item" href="#">Music</a>
+            <a class="dropdown-item" (click)='toBoudoir()'>Boudoir</a>
+            <a class="dropdown-item" (click)='toPortrait()'>Portrait</a>
+            <a class="dropdown-item" (click)='toMusic()'>Music</a>
           </div>
         </li>
         <li class="nav-item">
@@ -28,6 +28,13 @@
         </li>
 
         <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://www.instagram.com/joelaphoto"><img src="../../assets/img/insta.png" alt=""></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://www.patreon.com/joelaphoto"><img src="../../assets/img/patreon.png" alt=""></a>
+        </li>
+
+        <li class="nav-item">
           <div *ngIf='(user|async)?.uid'>
             <a class="nav-link" href="#" (click)="logOut()">Log Out</a>
           </div>
@@ -35,5 +42,4 @@
       </ul>
     </div>
   </div>
-
 </nav>
