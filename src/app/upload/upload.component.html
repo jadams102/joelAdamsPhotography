@@ -19,10 +19,6 @@
         <label>Title</label>
         <input type="text" [(ngModel)]="title" placeholder="Title..." class="form-control">
       </div>
-      <div class="form-group">
-        <label>Description</label>
-        <textarea [(ngModel)]="description" placeholder="Description..." class="form-control"></textarea>
-      </div>
       <div *ngIf='galleries' class="form-group">
         <label>Gallery</label>
         <select class="form-control" [(ngModel)]="gallery">

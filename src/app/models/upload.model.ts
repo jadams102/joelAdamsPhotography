@@ -6,7 +6,6 @@ export class Upload {
     progress: number;
     createdOn: Date = new Date();
     title: string;
-    description: string;
     gallery: string;
     constructor(file: File) {
       this.file = file;

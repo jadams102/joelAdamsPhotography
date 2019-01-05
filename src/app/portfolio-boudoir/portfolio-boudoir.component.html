@@ -1,26 +1,16 @@
 <div class="gallery-section">
   <div class="container">
-    <div class="card">
-        <h1 class="card-title">Boudoir</h1>
-      <div class="card-body">
-        <ul>
-          <li *ngFor="let image of images | async" class="card">
-              <a (click)='goToImageDetail(image)'><img class="card-image" src="{{image.url}}"></a>
-
-            <div *ngIf='(user|async)?.uid'>
-
-            <div class="card-footer">
-                <button class="btn btn-danger" (click)='deleteImage(image)'>Delete Image</button>
-            </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div *ngIf='(user|async)?.uid'>
-        <div class="card-footer">
-          <app-upload [galleryName]='Boudoir'></app-upload>
+    <h1 class="gallery-title">Boudoir</h1>
+    <ul>
+      <li *ngFor="let image of images" class="card">
+        <a (click)='goToImageDetail(image)'><img class="card-image" src="{{image.url}}"></a>
+        <div *ngIf='(user|async)?.uid'>
+          <button class="btn btn-danger" (click)='deleteImage(image)'>Delete Image</button>
         </div>
-      </div>
+      </li>
+    </ul>
+    <div id="upload-window" *ngIf='(user|async)?.uid'>
+      <app-upload [galleryName]='(galleryName)'></app-upload>
     </div>
   </div>
 </div>

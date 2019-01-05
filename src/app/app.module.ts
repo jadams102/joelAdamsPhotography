@@ -16,7 +16,7 @@ import { ImageService } from './services/image.service';
 import { AuthenticationService } from './services/authentication.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { UploadService } from './services/upload.service';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { config }  from './api-keys';
