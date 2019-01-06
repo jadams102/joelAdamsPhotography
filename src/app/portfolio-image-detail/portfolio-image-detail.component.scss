@@ -1,5 +1,5 @@
 .container {
-    padding-top: 130px;
+    padding-top: 110px;
 }
 
 h1 {
@@ -10,4 +10,14 @@ h1 {
 img {
     max-width: 100%;
     margin-top: 10px;
+}
+
+.btn-back {
+    font-size: 24px;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: white;
+    border-style: solid;
+    border-radius: 0px;
 }
