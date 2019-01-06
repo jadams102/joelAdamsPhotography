@@ -18,6 +18,10 @@ export class NavbarComponent implements OnInit {
     this.user = this.authService.authUser();
   }
 
+  logOut() {
+    this.authService.logout().then(onResolve => this.router.navigate['/']);
+  }
+
   toAbout() {
     this.router.navigate(['about'])
   }
