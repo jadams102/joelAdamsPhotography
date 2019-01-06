@@ -28,7 +28,7 @@ export class PortfolioBoudoirComponent implements OnInit {
   }
 
   goToImageDetail(clickedImage) {
-    this.router.navigate(['gallery', clickedImage.gallery, clickedImage.$key]);
+    this.router.navigate([clickedImage.gallery, clickedImage.$key]);
   }
 
   deleteImage(image) {

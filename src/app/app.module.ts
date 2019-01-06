@@ -22,6 +22,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { config }  from './api-keys';
 import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
+import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -42,6 +43,7 @@ export const firebaseConfig = {
     PortfolioPortraitComponent,
     UploadComponent,
     LoginComponent,
+    PortfolioImageDetailComponent,
   ],
   imports: [
     BrowserModule,

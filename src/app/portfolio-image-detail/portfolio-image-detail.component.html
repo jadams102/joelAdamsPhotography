@@ -1,0 +1,13 @@
+<div class="gallery-section">
+  <div class="container">
+      <h1 class="card-title">{{imageToDisplay?.name}}</h1>
+
+          <img src="{{imageToDisplay?.url}}" alt="">
+              <button class="btn btn-info" (click)='navToGallery()'>Back To Gallery</button>
+              <div *ngIf='(user|async)?.uid'>
+
+              <button class="btn btn-danger" (click)='deleteImage()'>Delete</button>
+            </div>
+
+    </div>
+</div>

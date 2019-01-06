@@ -7,6 +7,7 @@ import { PortfolioBoudoirComponent } from './portfolio-boudoir/portfolio-boudoir
 import { PortfolioPortraitComponent } from './portfolio-portrait/portfolio-portrait.component';
 import { PortfolioMusicComponent } from './portfolio-music/portfolio-music.component';
 import { LoginComponent } from './login/login.component';
+import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'music',
     component: PortfolioMusicComponent
+  },
+  {
+    path: ':name/:id',
+    component: PortfolioImageDetailComponent
   },
   {
     path: 'login',
