@@ -1,8 +1,16 @@
 .container {
-    padding-top: 130px;
+    min-height: 100vh;
+    padding-top: 65px;
+    padding-bottom: 70px;
+}
+
+body {
+    background-color: black;
+    font-family: apertura, sans-serif;
 }
 
 .gallery-title {
+    font-size: 30px;
     text-align: right;
     color: white;
 }
@@ -15,7 +23,7 @@
 }
 
 ul { 
-    margin-top: 50px;
+    margin-top: 10px;
     padding:0; 
     width:100%; 
     columns: 2;
@@ -37,8 +45,31 @@ img {
     width: 100%;
 }
 
+.gallery-section {
+    background-attachment: fixed;
+    background-image: url('../../assets/img/gallery-bg.jpg');
+}
+
+@media only screen and (min-width: 425px) {
+    .container {
+        padding-top: 75px;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     ul {
         columns: 3;
     }
-  }
+
+    .gallery-title {
+        margin-top: 10px;
+        font-size: 50px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .gallery-title {
+        margin-top: 50px;
+        font-size: 70px;
+    }
+}
