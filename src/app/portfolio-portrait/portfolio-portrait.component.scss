@@ -39,6 +39,7 @@ img {
     display: block;
     max-width: 100%;
     cursor: pointer;
+    background: transparent url('../../assets/img/loader.gif') center no-repeat;
 }
 
 .btn-danger {
@@ -49,6 +50,15 @@ img {
     background-attachment: fixed;
     background-image: url('../../assets/img/gallery-bg.jpg');
 }
+
+img:hover {
+    opacity: 0.6;
+}
+
+img:active {
+    opacity: 0.3;
+}
+
 
 @media only screen and (min-width: 425px) {
     .container {

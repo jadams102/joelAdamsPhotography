@@ -39,7 +39,17 @@ img {
     display: block;
     max-width: 100%;
     cursor: pointer;
+    background: transparent url('../../assets/img/loader.gif') center no-repeat;
 }
+
+img:hover {
+    opacity: 0.6;
+}
+
+img:active {
+    opacity: 0.3;
+}
+
 
 .btn-danger {
     width: 100%;

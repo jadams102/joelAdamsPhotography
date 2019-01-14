@@ -1,6 +1,7 @@
 .container {
     padding-top: 70px;
     padding-bottom: 70px;
+    min-height: 100vh;
 }
 
 body {
@@ -14,7 +15,10 @@ h1 {
 }
 
 img {
-    max-width: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left:auto;
+    width: 100%;
     margin-top: 10px;
 }
 
@@ -41,6 +45,7 @@ img {
 
 .gallery-section {
     background-attachment: fixed;
+    background-size: cover;
     background-image: url('../../assets/img/gallery-bg.jpg');
 }
 

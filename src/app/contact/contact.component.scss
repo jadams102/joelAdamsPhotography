@@ -62,12 +62,28 @@ input {
     background-color: rgba(255, 255, 255, 0.8)
 }
 
+.gallery-title {
+    font-size: 30px;
+    text-align: right;
+    color: white;
+}
+
+@media only screen and (min-width: 425px) {
+    .container {
+        padding-top: 75px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .contact-section {
         background-image: url('../../assets/img/contact-bg-mobile.jpg');
     }
     .container {
         padding-top: 100px;
+    }
+    .gallery-title {
+        margin-top: 10px;
+        font-size: 50px;
     }
 }
 
@@ -80,5 +96,10 @@ input {
 @media only screen and (min-width: 900px) {
     .card {
         max-width: 40%;
+    }
+
+        .gallery-title {
+        margin-top: 50px;
+        font-size: 70px;
     }
 }
