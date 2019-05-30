@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Upload } from '../models/upload.model';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs';
-import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-portfolio-portrait',
