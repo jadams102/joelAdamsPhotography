@@ -1,15 +1,6 @@
 body {
     font-family: apertura, sans-serif;
-    background-image: url("./assets/img/slides/mobile/mobile-img-1.jpg");
-    background-position: bottom center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @media(min-width: 786px) {
-        display: block;
-        background-image: url(./assets/img/slides/img-1.jpg);
-    }}
+    background-color: black;
 
 a {
     color: red;

@@ -34,18 +34,16 @@ export class HomeComponent implements OnInit {
       }
       var int = getRandomIntInclusive(1,count);
       var image = array[int] + 1;
-      console.log(array);
-      console.log(int);
       array.splice(int, 1);
       count--;
       if(jquery(bg[0]).hasClass("active")) {
-        jquery(bg[1]).css("background-image", "url(" + imagePath + "img-" + image + ".jpg" +")")
-        jquery(bg[0]).fadeOut(1500).removeClass("active");
+        jquery(bg[1]).css("background-image", "url(" + imagePath + "img-" + image + "-min.jpg" +")")
+        jquery(bg[0]).fadeOut(2000).removeClass("active");
       } else {
-        jquery(bg[0]).css("background-image", "url(" + imagePath + "img-" + image + ".jpg" +")").fadeIn(1500).addClass("active")
+        jquery(bg[0]).css("background-image", "url(" + imagePath + "img-" + image + "-min.jpg" +")").fadeIn(2000).addClass("active")
         jquery(bg[1]).removeClass("active");
       }
-    }, 3000)
+    }, 8000)
   }
 
 }
