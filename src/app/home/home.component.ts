@@ -24,18 +24,15 @@ export class HomeComponent implements OnInit {
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
     }
-    var count = 20;
 
 
     setInterval(function() {
-      if (count <= 1) {
+      if (array.length <= 1) {
         array = Array.from({length: 20}, (x,i) => i);
-        count= 20
       }
-      var int = getRandomIntInclusive(1,count);
+      var int = getRandomIntInclusive(1,array.length);
       var image = array[int] + 1;
       array.splice(int, 1);
-      count--;
       if(jquery(bg[0]).hasClass("active")) {
         jquery(bg[1]).css("background-image", "url(" + imagePath + "img-" + image + "-min.jpg" +")")
         jquery(bg[0]).fadeOut(2000).removeClass("active");
