@@ -36,20 +36,12 @@ li {
 }
 
 img {
-    display: block;
     max-width: 100%;
     cursor: pointer;
-    background: transparent url('../../assets/img/loader.gif') center no-repeat;
-}
+    display: none;
+    transition: outline 0.5s ease;
 
-img:hover {
-    opacity: 0.6;
 }
-
-img:active {
-    opacity: 0.3;
-}
-
 
 .btn-danger {
     width: 100%;
@@ -58,6 +50,14 @@ img:active {
 .gallery-section {
     background-attachment: fixed;
     background-image: url('../../assets/img/gallery-bg.jpg');
+}
+
+img:hover {
+    outline: solid red 2px;
+}
+
+img:active {
+    opacity: 0.3;
 }
 
 @media only screen and (min-width: 425px) {

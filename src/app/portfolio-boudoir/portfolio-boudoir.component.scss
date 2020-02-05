@@ -36,10 +36,11 @@ li {
 }
 
 img {
-    display: block;
     max-width: 100%;
     cursor: pointer;
-    background: transparent url('../../assets/img/loader.gif') center no-repeat;
+    display: none;
+    transition: outline 0.5s ease;
+
 }
 
 .btn-danger {
@@ -52,7 +53,7 @@ img {
 }
 
 img:hover {
-    opacity: 0.6;
+    outline: solid red 2px;
 }
 
 img:active {

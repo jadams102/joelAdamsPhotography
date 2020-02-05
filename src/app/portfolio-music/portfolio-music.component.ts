@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Upload } from '../models/upload.model';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs';
+import * as jquery from 'jquery';
 
 @Component({
   selector: 'app-portfolio-music',
@@ -33,6 +34,11 @@ export class PortfolioMusicComponent implements OnInit {
 
   deleteImage(image) {
     this.imageService.removeImage(image);
+  }
+
+  slideDown($event) {
+    console.log($event.target)
+    jquery($event.target).fadeIn({queue: true}, "slow");
   }
 
 }
