@@ -26,6 +26,8 @@ nav.navbar {
         a.nav-link{
             color: white;
             cursor: pointer;
+            transition: color 0.5s ease;
+
             &:hover {
                 color: red;
             }
@@ -36,6 +38,7 @@ nav.navbar {
                 padding: 5px;
                 position: relative;
                 bottom: 5px;
+                transition: background-color 0.5s ease;
                 &:hover {
                     background-color: red;
                 }
