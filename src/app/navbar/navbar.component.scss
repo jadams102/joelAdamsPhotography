@@ -26,24 +26,29 @@ nav.navbar {
         a.nav-link{
             color: white;
             cursor: pointer;
-            transition: color 0.5s ease;
-
-            &:hover {
-                color: red;
-            }
-            img {
-                max-width: 35px;
-                border-radius: 10px;
-                border-width: 3px;
-                padding: 5px;
-                position: relative;
-                bottom: 5px;
+            &.text-link {
                 transition: background-color 0.5s ease;
+    
                 &:hover {
                     background-color: red;
                 }
             }
+            &.image-link{
+                img {
+                    max-width: 35px;
+                    border-radius: 10px;
+                    border-width: 3px;
+                    padding: 5px;
+                    position: relative;
+                    bottom: 5px;
+                    transition: background-color 0.5s ease;
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+            }
         }
+        
     .navbar-toggler {
         color: rgba(255, 255, 255, 1);
         margin-bottom: 50px;
