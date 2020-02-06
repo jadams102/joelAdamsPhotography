@@ -39,7 +39,13 @@ img {
     max-width: 100%;
     cursor: pointer;
     display: none;
-    transition: outline 0.5s ease;
+    transition: all .2s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:active {
+        transform: scale(0.9);
+    }
 
 }
 
@@ -50,14 +56,6 @@ img {
 .gallery-section {
     background-attachment: fixed;
     background-image: url('../../assets/img/gallery-bg.jpg');
-}
-
-img:hover {
-    outline: solid red 2px;
-}
-
-img:active {
-    opacity: 0.3;
 }
 
 @media only screen and (min-width: 425px) {
