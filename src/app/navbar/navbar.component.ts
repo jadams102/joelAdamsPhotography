@@ -24,10 +24,6 @@ export class NavbarComponent implements OnInit {
   jquery('.dropdown-item').on('click', function(){
     jquery('.navbar-toggler').click(); //bootstrap 4.x
 });
-
-jquery('.navbar-brand').on('click', function(){
-  jquery('.navbar-toggler').click(); //bootstrap 4.x
-});
   }
 
   logOut() {
