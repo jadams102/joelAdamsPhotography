@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
+import * as jquery from 'jquery';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,17 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.authUser();
+    jquery('.nav-link a').on('click', function(){
+      jquery('.navbar-toggler').click(); //bootstrap 4.x
+  });
+
+  jquery('.dropdown-item').on('click', function(){
+    jquery('.navbar-toggler').click(); //bootstrap 4.x
+});
+
+jquery('.navbar-brand').on('click', function(){
+  jquery('.navbar-toggler').click(); //bootstrap 4.x
+});
   }
 
   logOut() {
