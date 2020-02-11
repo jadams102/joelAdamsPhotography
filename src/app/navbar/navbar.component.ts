@@ -17,13 +17,11 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.authUser();
-    jquery('.nav-item').on('click', function(){
-      jquery('.navbar-toggler').click(); //bootstrap 4.x
-  });
-
-  jquery('.dropdown-item').on('click', function(){
-    jquery('.navbar-toggler').click(); //bootstrap 4.x
-});
+    if(window.innerWidth < 768 && (jquery("button.navbar-toggler").hasClass("collapsed")) === false) {
+      jquery('.collapser').on('click', function(){
+        jquery('.navbar-toggler').click(); //bootstrap 4.x
+      });
+    }
   }
 
   logOut() {

@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="../../assets/img/logo.png" alt=""></a>
+    <a class="navbar-brand collapser" href="#"><img src="../../assets/img/logo.png" alt=""></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#siteNavbar" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -16,16 +16,16 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <hr>
-            <a class="dropdown-item" (click)='toBoudoir()'>Boudoir</a>
-            <a class="dropdown-item" (click)='toPortrait()'>Portrait</a>
-            <a class="dropdown-item" (click)='toMusic()'>Music</a>
+            <a class="dropdown-item collapser" (click)='toBoudoir()'>Boudoir</a>
+            <a class="dropdown-item collapser" (click)='toPortrait()'>Portrait</a>
+            <a class="dropdown-item collapser" (click)='toMusic()'>Music</a>
             <hr>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-link" (click)='toContact()'>Contact</a>
+        <li class="nav-item collapser">
+          <a class="nav-link text-link " (click)='toContact()'>Contact</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item collapser">
           <a class="nav-link text-link" (click)='toAbout()'>About</a>
         </li>
         <div class="social">
