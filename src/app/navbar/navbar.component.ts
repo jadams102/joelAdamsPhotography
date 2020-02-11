@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.authUser();
-    jquery('.nav-link a').on('click', function(){
+    jquery('.nav-item').on('click', function(){
       jquery('.navbar-toggler').click(); //bootstrap 4.x
   });
 
