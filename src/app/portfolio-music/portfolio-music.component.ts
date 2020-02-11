@@ -37,8 +37,7 @@ export class PortfolioMusicComponent implements OnInit {
   }
 
   slideDown($event) {
-    console.log($event.target)
-    jquery($event.target).fadeIn({queue: true}, "slow");
+    jquery($event.target).delay(200).fadeIn({queue: true}, 2000);
   }
 
 }

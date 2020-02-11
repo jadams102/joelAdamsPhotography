@@ -1,15 +1,47 @@
 
 nav.navbar {
-    .navbar-nav {
-        margin-bottom: 120px; 
+
+    #siteNavbar {
+        transition: all .2s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.45);
+        @media(min-width: 768px) {
+            background-color: transparent;
+        }
     }
+
+    @media(min-width: 768px) {
+        .navbar-nav {
+            margin-bottom: 120px; 
+        }
+    }
+    button.navbar-toggler {
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+
     
     .dropdown-menu {
         color: white;
-        background-color: rgba(0, 0, 0, 0.767);
+        background-color: transparent;
+        outline: none;
+        border: none;
+        transition: all .2s ease-in-out;
+
+        @media(min-width: 768px) {
+            background-color: rgba(0, 0, 0, 0.45);
+
+        }
+
+        hr {
+            width: 95%;
+            border-color: rgba(255, 255, 255, 0.5);
+            height: 1px;
+            margin: 3px auto;
+        }
 
         .dropdown-item {
             cursor: pointer;
+            text-align: right;
+            margin: 3px 0;
         }
         .dropdown-item:hover {
             background-color: rgba(255, 0, 0, 0.568);
@@ -29,36 +61,55 @@ nav.navbar {
         }
     }
     
+li.nav-item {
+    text-align: right;
+    padding-right: 10px;
+    a.nav-link{
+        color: white;
+        cursor: pointer;
+    }
+    .text-link,.dropdown-item {
+        transition: background-color 0.5s ease;
 
-        a.nav-link{
-            color: white;
-            cursor: pointer;
-            &.text-link {
-                transition: background-color 0.5s ease;
-    
-                &:hover {
-                    background-color: red;
-                }
-            }
-            &.image-link{
-                img {
-                    max-width: 35px;
-                    border-radius: 10px;
-                    border-width: 3px;
-                    padding: 5px;
-                    position: relative;
-                    bottom: 5px;
-                    transition: all .2s ease-in-out;
-                    &:hover {
-                        background-color: red;
-                        transform: scale(1.1);
-                    }
-                    &:active {
-                        transform: scale(0.9);
-                    }
-                }
-            }
+        &:hover {
+            background-color: red;
         }
+    }
+}
+
+div.social {
+    display: flex;
+    float: right;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+    @media(min-width: 768px) {
+        margin-top: 0px;
+
+    }
+    li.nav-item.image-link{
+        width: 40px;
+        img {
+            max-width: 35px;
+            border-width: 3px;
+            padding: 5px;
+            position: relative;
+            bottom: 5px;
+            transition: all .2s ease-in-out;
+        &:hover {
+            background-color: red;
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}
+}
+    
+}
+
+    
         
     .navbar-toggler {
         color: rgba(255, 255, 255, 1);
@@ -68,4 +119,4 @@ nav.navbar {
             margin-bottom: 130px;
         }
     }
-}
+

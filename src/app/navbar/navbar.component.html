@@ -15,9 +15,11 @@
             Portfolio
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <hr>
             <a class="dropdown-item" (click)='toBoudoir()'>Boudoir</a>
             <a class="dropdown-item" (click)='toPortrait()'>Portrait</a>
             <a class="dropdown-item" (click)='toMusic()'>Music</a>
+            <hr>
           </div>
         </li>
         <li class="nav-item">
@@ -26,16 +28,18 @@
         <li class="nav-item">
           <a class="nav-link text-link" (click)='toAbout()'>About</a>
         </li>
+        <div class="social">
+          <li class="nav-item image-link">
+            <a class="nav-link" target="_blank" href="https://www.instagram.com/some.babes.occasionally"><img src="../../assets/img/insta.png" alt=""></a>
+          </li>
+          <li class="nav-item image-link">
+            <a class="nav-link" target="_blank" href="https://www.twitter.com/joelaphoto"><img src="../../assets/img/twitter.png" alt=""></a>
+          </li>
+          <li class="nav-item image-link">
+            <a class="nav-link" target="_blank" href="https://www.patreon.com/joelaphoto"><img src="../../assets/img/patreon.png" alt=""></a>
+          </li>
+        </div>
 
-        <li class="nav-item">
-          <a class="nav-link image-link" target="_blank" href="https://www.instagram.com/some.babes.occasionally"><img src="../../assets/img/insta.png" alt=""></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link image-link" target="_blank" href="https://www.twitter.com/joelaphoto"><img src="../../assets/img/twitter.png" alt=""></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link image-link" target="_blank" href="https://www.patreon.com/joelaphoto"><img src="../../assets/img/patreon.png" alt=""></a>
-        </li>
 
         <li class="nav-item">
           <div *ngIf='(user|async)?.uid'>
