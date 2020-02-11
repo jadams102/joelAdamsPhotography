@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     }
     var bg = jquery("div.bg");
     var imgNumber = 2;
+    var controlSpeed = 300;
     var changing = false;
 
     function isChanging() {
@@ -38,15 +39,15 @@ export class HomeComponent implements OnInit {
         }
         if(jquery(bg[0]).hasClass("active")) {
           jquery(bg[1]).css("background-image", "url(" + imagePath + "img-" + imgNumber + "-min.jpg" +")")
-          jquery(bg[0]).fadeOut(600).removeClass("active");
+          jquery(bg[0]).fadeOut(controlSpeed).removeClass("active");
           setTimeout(function() {
             isChanging();
-          }, 600)
+          }, controlSpeed)
         } else {
           setTimeout(function() {
             isChanging();
-          }, 600)
-          jquery(bg[0]).css("background-image", "url(" + imagePath + "img-" + imgNumber + "-min.jpg" +")").fadeIn(600).addClass("active")
+          }, controlSpeed)
+          jquery(bg[0]).css("background-image", "url(" + imagePath + "img-" + imgNumber + "-min.jpg" +")").fadeIn(controlSpeed).addClass("active")
           jquery(bg[1]).removeClass("active");
         }
       }
@@ -63,15 +64,15 @@ export class HomeComponent implements OnInit {
         }
         if(jquery(bg[0]).hasClass("active")) {
           jquery(bg[1]).css("background-image", "url(" + imagePath + "img-" + imgNumber + "-min.jpg" +")")
-          jquery(bg[0]).fadeOut(600).removeClass("active");
+          jquery(bg[0]).fadeOut(controlSpeed).removeClass("active");
           setTimeout(function() {
             isChanging();
-          }, 600)
+          }, controlSpeed)
         } else {
           setTimeout(function() {
             isChanging();
-          }, 600)
-          jquery(bg[0]).css("background-image", "url(" + imagePath + "img-" + imgNumber + "-min.jpg" +")").fadeIn(600).addClass("active")
+          }, controlSpeed)
+          jquery(bg[0]).css("background-image", "url(" + imagePath + "img-" + imgNumber + "-min.jpg" +")").fadeIn(controlSpeed).addClass("active")
           jquery(bg[1]).removeClass("active");
         }
       }
