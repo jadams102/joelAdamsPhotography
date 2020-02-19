@@ -36,6 +36,7 @@ export class PortfolioImageDetailComponent implements OnInit {
   isLoaded() {
       jquery('#loading-detail').fadeOut(800, function() {
         jquery('#detail-image').css('opacity', '1');
+        
       });
   }
 }
