@@ -3,11 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { PortfolioBoudoirComponent } from './portfolio-boudoir/portfolio-boudoir.component';
-import { PortfolioPortraitComponent } from './portfolio-portrait/portfolio-portrait.component';
-import { PortfolioMusicComponent } from './portfolio-music/portfolio-music.component';
 import { LoginComponent } from './login/login.component';
 import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 const routes: Routes = [
   {
@@ -24,15 +22,15 @@ const routes: Routes = [
   },
   {
     path: 'boudoir',
-    component: PortfolioBoudoirComponent
+    component: PortfolioComponent
   },
   {
     path: 'portrait',
-    component: PortfolioPortraitComponent
+    component: PortfolioComponent
   },
   {
     path: 'music',
-    component: PortfolioMusicComponent
+    component: PortfolioComponent
   },
   {
     path: ':name/:id',
