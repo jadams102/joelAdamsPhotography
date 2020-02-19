@@ -17,6 +17,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   images: Upload[];
   user: Observable<firebase.User>;
   imagesLoaded: number;
+  imageToDetail: Upload;
 
   constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
@@ -37,7 +38,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   goToImageDetail(clickedImage) {
-    this.router.navigate([clickedImage.gallery, clickedImage.$key]);
+    this.imageToDetail = clickedImage;
+    jquery("#image-detail").delay(300).slideDown();
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   deleteImage(image) {

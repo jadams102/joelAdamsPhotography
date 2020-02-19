@@ -1,6 +1,8 @@
 <div class="gallery-section">
   <div class="container">
     <h1 class="gallery-title">{{galleryName}}</h1>
+    <app-portfolio-image-detail [imageToDisplay]="imageToDetail" id='image-detail' (click)='closeImageDetail()' ></app-portfolio-image-detail>
+
     <div class="sk-circle">
       <div class="sk-circle1 sk-child"></div>
       <div class="sk-circle2 sk-child"></div>
