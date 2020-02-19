@@ -17,11 +17,13 @@ export class PortfolioBoudoirComponent implements OnInit, AfterViewInit {
   galleryName: string;
   images: Upload[];
   user: Observable<firebase.User>;
+  imagesLoaded: number;
 
   constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.galleryName = 'Boudoir'
+    this.imagesLoaded = 0;
     this.imageService.setGallery(this.galleryName.toLowerCase());
     this.imageService.getGallery().subscribe(data => {
       this.images = data;
@@ -42,10 +44,15 @@ export class PortfolioBoudoirComponent implements OnInit, AfterViewInit {
     this.imageService.removeImage(image);
   }
 
-  isLoaded($event) {
-    const element = $event.target;
-    jquery('.sk-circle').fadeOut(1100, function() {
-      jquery(element).css('opacity', '1');
-    });
+  isLoaded() {
+    console.log(this.imagesLoaded)
+    console.log(this.images.length)
+    if(this.imagesLoaded === this.images.length - 1) {
+      jquery('.sk-circle').fadeOut(800, function() {
+        jquery('ul#gallery-list img').css('opacity', '1');
+      });
+    } else {
+      this.imagesLoaded = this.imagesLoaded + 1;
+    }
   }
 }
