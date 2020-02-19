@@ -55,6 +55,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   isLoaded() {
     if(this.imagesLoaded === this.images.length - 1) {
+      this.imagesLoadedPercentage = 100;
       jquery('#loading-gallery').fadeOut(800, function() {
         jquery('ul#gallery-list img').css('opacity', '1');
       });
