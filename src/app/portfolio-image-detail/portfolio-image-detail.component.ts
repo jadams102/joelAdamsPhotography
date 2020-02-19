@@ -4,6 +4,7 @@ import { Upload } from '../models/upload.model';
 import { ImageService } from '../services/image.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs/Observable';
+import * as jquery from 'jquery';
 
 @Component({
   selector: 'app-portfolio-image-detail',
@@ -30,5 +31,11 @@ export class PortfolioImageDetailComponent implements OnInit {
     this.imageService.removeImage(this.imageToDisplay)
     this.router.navigate([this.imageToDisplay.gallery]);
     window.location.reload();
+  }
+
+  isLoaded() {
+      jquery('#loading-detail').fadeOut(800, function() {
+        jquery('#detail-image').css('opacity', '1');
+      });
   }
 }

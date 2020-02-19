@@ -17,6 +17,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   images: Upload[];
   user: Observable<firebase.User>;
   imagesLoaded: number;
+  imagesLoadedPercentage: number;
   imageToDetail: Upload;
 
   constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
@@ -43,17 +44,23 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
+  closeImageDetail() {
+    jquery("#image-detail").slideUp();
+
+  }
+
   deleteImage(image) {
     this.imageService.removeImage(image);
   }
 
   isLoaded() {
     if(this.imagesLoaded === this.images.length - 1) {
-      jquery('.sk-circle').fadeOut(800, function() {
+      jquery('#loading-gallery').fadeOut(800, function() {
         jquery('ul#gallery-list img').css('opacity', '1');
       });
     } else {
       this.imagesLoaded = this.imagesLoaded + 1;
+      this.imagesLoadedPercentage = this.imagesLoaded / this.images.length * 100;
     }
   }
 }
