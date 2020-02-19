@@ -19,6 +19,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   imagesLoaded: number;
   imagesLoadedPercentage: number;
   imageToDetail: Upload;
+  imageElement: any;
 
   constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
@@ -38,14 +39,38 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   }
 
-  goToImageDetail(clickedImage) {
+  goToImageDetail(clickedImage, i) {
     this.imageToDetail = clickedImage;
-    jquery("#image-detail").delay(300).slideDown();
+    this.imageElement = i;
+    jquery(".image-detail-container").delay(300).slideDown();
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
+  nextImage() {
+    if (this.imageElement === this.images.length - 1) {
+      this.imageElement = 0;
+      this.imageToDetail = this.images[this.imageElement];
+      
+    } else {
+      this.imageElement++;
+      this.imageToDetail = this.images[this.imageElement];
+    }
+    console.log(this.imageElement);
+  }
+
+  prevImage() {
+    if (this.imageElement === 0) {
+      this.imageElement = this.images.length - 1;
+      this.imageToDetail = this.images[this.imageElement];
+    } else {
+      this.imageElement--;
+      this.imageToDetail = this.images[this.imageElement];
+    }
+    console.log(this.imageElement);
+  }
+
   closeImageDetail() {
-    jquery("#image-detail").slideUp();
+    jquery(".image-detail-container").slideUp();
 
   }
 

@@ -13,10 +13,44 @@ body {
     @media only screen and (min-width: 425px) {
         padding-top: 75px;
     }
-    #image-detail {
+    .image-detail-container {
         display: none;
         transition: all .2s ease-in-out;
         margin-bottom: 20px;
+        div.controls {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            top: 30%;
+            z-index: 100;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .ctrl-right {
+                margin-right: 60px;
+            }
+
+            .ctrl-left {
+                margin-left: 60px;
+            }
+
+            .ctrl-right, .ctrl-left{
+                opacity: 0.35;
+                width: 50px;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+                &:hover {
+                    opacity: 0.65;
+                    transform: scale(1.1);
+                }
+                &:active {
+                    opacity: 0.65;
+                    transform: scale(0.9);
+                }
+            }
+        }
     }
     
     .gallery-title {

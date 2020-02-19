@@ -32,11 +32,4 @@ export class PortfolioImageDetailComponent implements OnInit {
     this.router.navigate([this.imageToDisplay.gallery]);
     window.location.reload();
   }
-
-  isLoaded() {
-      jquery('#loading-detail').fadeOut(800, function() {
-        jquery('#detail-image').css('opacity', '1');
-        
-      });
-  }
 }

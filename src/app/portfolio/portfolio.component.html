@@ -1,8 +1,14 @@
 <div class="gallery-section">
   <div class="container">
     <h1 class="gallery-title">{{galleryName}}</h1>
-    <app-portfolio-image-detail [imageToDisplay]="imageToDetail" id='image-detail' (click)='closeImageDetail()'>
-    </app-portfolio-image-detail>
+    <div class="image-detail-container">
+      <div class="controls">
+<img class="ctrl-left" (click)="prevImage()" src="../../assets/img/caret-left.png" alt="">
+        <img class="ctrl-right" (click)="nextImage()" src="../../assets/img/caret-right.png" alt="">
+    </div>
+      <app-portfolio-image-detail [imageToDisplay]="imageToDetail" id='image-detail' (click)='closeImageDetail()'>
+      </app-portfolio-image-detail>
+    </div>
     <div id="loading-gallery">
       <div class="progress">
         <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': imagesLoadedPercentage + '%' }"></div>
@@ -26,7 +32,7 @@
     <ul id="gallery-list">
       <li *ngFor="let image of images; let i = index">
 
-        <a (click)='goToImageDetail(image)'><img (load)='isLoaded()' src="{{image.url}}"></a>
+        <a (click)='goToImageDetail(image, i)'><img (load)='isLoaded()' src="{{image.url}}"></a>
         <div *ngIf='(user|async)?.uid'>
           <button class="btn btn-danger" (click)='deleteImage(image)'>Delete Image</button>
         </div>
