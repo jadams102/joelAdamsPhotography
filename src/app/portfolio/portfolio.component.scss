@@ -82,8 +82,10 @@ body {
                 background-color: transparent;
                 border: 3px solid white;
                 border-radius: 25px;
-                position: relative;
-                top: 50vh;
+                position: fixed;
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, -80%);
                 width: 50%;
                 margin: 0 auto;
                 .progress-bar {
