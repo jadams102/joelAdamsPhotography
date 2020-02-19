@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ImageService } from '../services/image.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Upload } from '../models/upload.model';
@@ -12,11 +12,11 @@ import * as jquery from 'jquery';
   templateUrl: './portfolio-boudoir.component.html',
   styleUrls: ['./portfolio-boudoir.component.scss']
 })
-export class PortfolioBoudoirComponent implements OnInit {
+export class PortfolioBoudoirComponent implements OnInit, AfterViewInit {
 
   galleryName: string;
   images: Upload[];
-  user: Observable<firebase.User>
+  user: Observable<firebase.User>;
 
   constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
 
@@ -27,6 +27,11 @@ export class PortfolioBoudoirComponent implements OnInit {
       this.images = data;
     });
     this.user = this.authService.authUser();;
+
+  }
+
+  ngAfterViewInit() {
+
   }
 
   goToImageDetail(clickedImage) {
@@ -37,8 +42,10 @@ export class PortfolioBoudoirComponent implements OnInit {
     this.imageService.removeImage(image);
   }
 
-  slideDown($event) {
-    jquery($event.target).delay(200).fadeIn({queue: true}, 2000);
+  isLoaded($event) {
+    const element = $event.target;
+    jquery('.sk-circle').fadeOut(1100, function() {
+      jquery(element).css('opacity', '1');
+    });
   }
-
 }

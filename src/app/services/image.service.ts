@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import 'firebase/storage';
+import 'firebase/database';
 import { Upload } from '../models/upload.model';
 import { UploadService } from './upload.service';
 
@@ -11,6 +12,8 @@ export class ImageService {
   gallery: FirebaseListObservable<Upload[]>;
   allGalleries: FirebaseListObservable<any[]>;
 
+  isLoading: boolean = true;
+
   constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase, private uploadService: UploadService) {
     this.afAuth.authState.subscribe(auth => {
       if (auth !== undefined && auth !== null) {
@@ -18,10 +21,11 @@ export class ImageService {
       }
     });
     this.allGalleries = this.database.list('galleries');
+
   }
 
   setGallery(galleryPath: string) {
-    this.gallery = this.database.list('galleries/' + galleryPath + '/');
+    this.gallery = this.database.list('galleries/' + galleryPath + '/')
   }
 
   getGallery() {

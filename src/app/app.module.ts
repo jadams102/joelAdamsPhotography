@@ -43,7 +43,7 @@ export const firebaseConfig = {
     PortfolioPortraitComponent,
     UploadComponent,
     LoginComponent,
-    PortfolioImageDetailComponent,
+    PortfolioImageDetailComponent
   ],
   imports: [
     BrowserModule,
