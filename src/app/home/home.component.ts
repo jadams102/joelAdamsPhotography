@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
         clearInterval(interval);
         changing = true;
         if(imgNumber === 1) {
-          imgNumber = 20;
+          imgNumber = 18;
         } else {
           imgNumber--;
         }
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
       if(!changing) {
         clearInterval(interval);
         changing = true;
-        if(imgNumber === 20) {
+        if(imgNumber === 18) {
           imgNumber = 1;
         } else {
           imgNumber++;
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
     var interval = setInterval(function() {
       if (!changing) {
         changing = true;
-        if (imgNumber === 20) {
+        if (imgNumber === 18) {
           imgNumber = 1;
         }
         if(jquery(bg[0]).hasClass("active")) {
