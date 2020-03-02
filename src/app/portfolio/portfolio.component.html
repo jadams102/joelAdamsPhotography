@@ -3,9 +3,9 @@
     <h1 class="gallery-title">{{galleryName}}</h1>
     <div class="image-detail-container">
       <div class="controls">
-<img class="ctrl-left" (click)="prevImage()" src="../../assets/img/caret-left.png" alt="">
+        <img class="ctrl-left" (click)="prevImage()" src="../../assets/img/caret-left.png" alt="">
         <img class="ctrl-right" (click)="nextImage()" src="../../assets/img/caret-right.png" alt="">
-    </div>
+      </div>
       <app-portfolio-image-detail [imageToDisplay]="imageToDetail" id='image-detail' (click)='closeImageDetail()'>
       </app-portfolio-image-detail>
     </div>

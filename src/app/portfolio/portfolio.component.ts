@@ -40,10 +40,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   goToImageDetail(clickedImage, i) {
+    if (this.imagesLoadedPercentage === 100) {
     this.imageToDetail = clickedImage;
     this.imageElement = i;
     jquery(".image-detail-container").delay(300).slideDown();
     window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
   }
 
   nextImage() {
