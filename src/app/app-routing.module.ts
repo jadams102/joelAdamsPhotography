@@ -21,7 +21,7 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
-    path: 'boudoir',
+    path: 'concept',
     component: PortfolioComponent
   },
   {

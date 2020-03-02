@@ -30,6 +30,11 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     this.imageService.setGallery(this.galleryName.toLowerCase());
     this.imageService.getGallery().subscribe(data => {
       this.images = data;
+      if (this.images.length === 0) {
+        jquery('#loading-gallery').fadeOut(800, function() {
+          jquery('ul#gallery-list img').css('opacity', '1');
+        });
+      }
     });
     this.user = this.authService.authUser();;
 

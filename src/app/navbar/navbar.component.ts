@@ -38,8 +38,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['contact'])
   }
 
-  toBoudoir() {
-    this.router.navigate(['boudoir'])
+  toConcept() {
+    this.router.navigate(['concept'])
   }
 
   toPortrait() {
