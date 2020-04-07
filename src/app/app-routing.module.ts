@@ -21,15 +21,7 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
-    path: 'concept',
-    component: PortfolioComponent
-  },
-  {
-    path: 'portrait',
-    component: PortfolioComponent
-  },
-  {
-    path: 'music',
+    path: 'gallery/:name',
     component: PortfolioComponent
   },
   {

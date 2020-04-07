@@ -25,7 +25,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     console.log(this.route.snapshot.url[0].path);
-    this.galleryName = this.route.snapshot.url[0].path;
+    this.galleryName = this.route.snapshot.params.name;
+    console.log(this.route.snapshot)
     this.imagesLoaded = 0;
     this.imageService.setGallery(this.galleryName.toLowerCase());
     this.imageService.getGallery().subscribe(data => {

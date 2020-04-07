@@ -17,8 +17,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.authUser();
-      console.log(jquery("button.navbar-toggler").hasClass("collapsed"))
-
       jquery('.collapser').on('click', function(){
         if(window.innerWidth < 768 && (jquery("button.navbar-toggler").hasClass("collapsed")) === false) {
         jquery('.navbar-toggler').click(); //bootstrap 4.x
@@ -38,15 +36,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['contact'])
   }
 
-  toConcept() {
-    this.router.navigate(['concept'])
-  }
-
-  toPortrait() {
-    this.router.navigate(['portrait'])
-  }
-
-  toMusic() {
-    this.router.navigate(['music'])
+  toGallery(event) {
+    this.router.navigate(['/gallery/'])
   }
 }

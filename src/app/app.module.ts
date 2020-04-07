@@ -21,6 +21,7 @@ import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
 import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { GalleryAdminComponent } from './gallery-admin/gallery-admin.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -39,7 +40,8 @@ export const firebaseConfig = {
     UploadComponent,
     LoginComponent,
     PortfolioImageDetailComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    GalleryAdminComponent
   ],
   imports: [
     BrowserModule,
