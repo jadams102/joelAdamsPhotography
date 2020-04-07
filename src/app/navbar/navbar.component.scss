@@ -42,6 +42,7 @@ nav.navbar {
             cursor: pointer;
             text-align: right;
             margin: 3px 0;
+            text-transform: capitalize;
         }
         .dropdown-item:hover {
             background-color: rgba(255, 0, 0, 0.568);

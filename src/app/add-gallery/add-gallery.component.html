@@ -1,0 +1,23 @@
+<div (click)="toggleModal()"class="add-gallery-tab">
+    <img src="./../../assets/img/add-gallery-icon-white.png" alt="Add Gallery">
+</div>
+<div class="add-modal">
+  <h2>Add Gallery</h2>
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="Gallery Title *" #newTitle>
+    <P>Gallery titles can't be changed later, so be careful!</P>
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="Short Description" #newShortDesc>
+  </div>
+  <div class="form-group">
+    <textarea class="form-control" placeholder="Long Description" #newLongDesc></textarea>
+  </div>
+  <div class="error">
+    {{errorText}}
+  </div>
+  <button class="btn btn-success"(click)="addGallery(newTitle.value, newShortDesc.value, newLongDesc.value)">Add</button>
+  <button class="btn btn-danger"(click)="toggleModal()">Close</button>
+</div>
+<div class="add-modal-bg" (click)="toggleModal()">
+</div>

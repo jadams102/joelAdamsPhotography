@@ -4,14 +4,13 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import 'firebase/storage';
 import 'firebase/database';
 import { Gallery } from '../models/gallery.model';
-import { UploadService } from './upload.service';
 
 @Injectable()
 export class GalleryService {
   private uid: string;
   galleries: FirebaseListObservable<Gallery[]>;
 
-  constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase, private uploadService: UploadService) {
+  constructor(private afAuth: AngularFireAuth, private database: AngularFireDatabase) {
     this.afAuth.authState.subscribe(auth => {
       if (auth !== undefined && auth !== null) {
         this.uid = auth.uid;

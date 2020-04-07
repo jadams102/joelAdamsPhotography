@@ -1,7 +1,6 @@
 export class Gallery {
-    $key: string;
-    createdOn: Date = new Date();
-    title: string;
-    shortDesc: string;
-    longDesc: string;
+    public $key: string;
+    public createdOn: Date = new Date();
+    constructor(public title: string, public shortDesc: string, public longDesc: string ) {
+    }
   }

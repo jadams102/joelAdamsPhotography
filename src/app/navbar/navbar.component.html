@@ -16,11 +16,8 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <hr>
-            <a class="dropdown-item collapser" (click)='toGallery(event)'>Concept</a>
-            <a class="dropdown-item collapser" (click)='toGallery(event)'>Portrait</a>
-            <a class="dropdown-item collapser" (click)='toGallery(event)'>Music</a>
+            <a *ngFor="let gallery of galleries" class="dropdown-item collapser" (click)='toGallery(gallery.title)'>{{gallery.title}}</a>
             <a class="dropdown-item collapser" href="https://www.joelradams.com">Web Development</a>
-
             <hr>
           </div>
         </li>
@@ -42,13 +39,18 @@
           </li>
         </div>
 
+        <div *ngIf='(user|async)?.uid'>
 
         <li class="nav-item">
-          <div *ngIf='(user|async)?.uid'>
             <a class="nav-link" href="#" (click)="logOut()">Log Out</a>
-          </div>
         </li>
+
+      </div>
+
       </ul>
     </div>
+  </div>
+  <div *ngIf='(user|async)?.uid'>
+  <app-add-gallery></app-add-gallery>
   </div>
 </nav>

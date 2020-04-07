@@ -4,6 +4,8 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import * as jquery from 'jquery';
+import { GalleryService } from '../services/gallery.service';
+import { Gallery } from '../models/gallery.model';
 
 @Component({
   selector: 'app-navbar',
@@ -11,11 +13,15 @@ import * as jquery from 'jquery';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  user: Observable<firebase.User>
+  user: Observable<firebase.User>;
+  galleries: Gallery[];
 
-  constructor( private authService: AuthenticationService, private router: Router) { }
+  constructor( private authService: AuthenticationService, private galleryService: GalleryService, private router: Router) { }
 
   ngOnInit() {
+    this.galleryService.getGalleries().subscribe((data) => {
+      this.galleries = data;
+    })
     this.user = this.authService.authUser();
       jquery('.collapser').on('click', function(){
         if(window.innerWidth < 768 && (jquery("button.navbar-toggler").hasClass("collapsed")) === false) {

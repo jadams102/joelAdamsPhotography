@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ImageService } from './services/image.service';
 import { AuthenticationService } from './services/authentication.service';
+import { GalleryService } from './services/gallery.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { UploadService } from './services/upload.service';
 import { AngularFireModule } from 'angularfire2';
@@ -21,7 +22,8 @@ import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
 import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { GalleryAdminComponent } from './gallery-admin/gallery-admin.component';
+import { AddGalleryComponent } from './add-gallery/add-gallery.component';
+import { EditGalleryComponent } from './edit-gallery/edit-gallery.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -41,7 +43,8 @@ export const firebaseConfig = {
     LoginComponent,
     PortfolioImageDetailComponent,
     PortfolioComponent,
-    GalleryAdminComponent
+    AddGalleryComponent,
+    EditGalleryComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [ ImageService, AuthenticationService, AngularFireAuth, UploadService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [ ImageService, AuthenticationService, AngularFireAuth, UploadService, GalleryService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

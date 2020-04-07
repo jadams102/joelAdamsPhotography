@@ -1,0 +1,46 @@
+div.add-gallery-tab {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 50px;
+    right: 50px;
+    background-color: rgba(27, 1, 1, 0.404);
+    border-radius: 50%;
+    padding: 24px 12px 12px 17px;
+    img {
+        width: 100%;
+    }
+}
+div.add-modal-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(27, 1, 1, 0.404);
+    z-index: 1000;
+    display: none;
+}
+
+div.add-modal {
+    position: fixed;
+    width: 500px;
+    margin-left: -250px;
+    top: 30%;
+    left: 50%;
+    padding: 7px 10px;
+    z-index: 1001;
+    background-color: white;
+    display: none;
+    p {
+        margin-top: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    div.error {
+        margin: 10px 0px;
+        color: red;
+    }
+
+}
