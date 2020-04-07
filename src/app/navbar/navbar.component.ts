@@ -42,7 +42,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['contact'])
   }
 
-  toGallery(event) {
-    this.router.navigate(['/gallery/'])
+  toGallery(title: string) {
+    this.router.navigate(['/gallery/' + title])
   }
 }

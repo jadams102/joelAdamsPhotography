@@ -21,7 +21,10 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   imageToDetail: Upload;
   imageElement: any;
 
-  constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { 
+    // force route reload whenever params change;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit() {
     console.log(this.route.snapshot.url[0].path);
