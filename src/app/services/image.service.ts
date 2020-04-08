@@ -10,6 +10,7 @@ import { UploadService } from './upload.service';
 export class ImageService {
   private uid: string;
   gallery: FirebaseListObservable<Upload[]>;
+  allGalleries: FirebaseListObservable<any[]>;
 
   isLoading: boolean = true;
 
@@ -19,6 +20,7 @@ export class ImageService {
         this.uid = auth.uid;
       }
     });
+    this.allGalleries = this.database.list('galleries/');
   }
 
   setGallery(galleryPath: string) {
@@ -27,6 +29,10 @@ export class ImageService {
 
   getGallery() {
     return this.gallery;
+  }
+
+  getAllGalleries() {
+    return this.allGalleries;
   }
 
   deleteGallery(galleryPath: string) {

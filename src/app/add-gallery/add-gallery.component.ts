@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Gallery } from '../models/gallery.model';
 import { GalleryService } from '../services/gallery.service';
 import * as jquery from 'jquery';
-import { e } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-add-gallery',

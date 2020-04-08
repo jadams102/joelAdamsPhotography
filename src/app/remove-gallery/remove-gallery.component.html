@@ -1,0 +1,9 @@
+<div class="remove-gallery-modal">
+<div *ngFor="let gallery of galleryInfo">
+    <div class="gallery-listing">
+        <h4>{{gallery.title}}</h4>
+        <button class="btn btn-danger" *ngIf="canBeDeleted(gallery.title)" (click)="removeGallery(gallery.$key)">Remove Gallery</button>
+    </div>
+
+</div>
+</div>

@@ -31,6 +31,9 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     this.imagesLoaded = 0;
     this.imageService.setGallery(this.galleryName.toLowerCase());
     this.imageService.getGallery().subscribe(data => {
+      if (data.length === 0) {
+        this.router.navigate(['/'])
+      }
       this.images = data;
       if (this.images.length === 0) {
         jquery('#loading-gallery').fadeOut(800, function() {
