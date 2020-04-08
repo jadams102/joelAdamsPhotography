@@ -54,17 +54,4 @@ export class AddGalleryComponent implements OnInit {
     }
     return result;
   }
-
-  toggleModal() {
-    this.modalOpen = !this.modalOpen;
-    if(this.modalOpen) {
-      jquery('div.add-modal').fadeIn();
-      jquery('div.add-modal-bg').fadeIn();
-      jquery('div.add-gallery-tab').fadeOut();
-    } else {
-      jquery('div.add-modal').fadeOut();
-      jquery('div.add-modal-bg').fadeOut();
-      jquery('div.add-gallery-tab').fadeIn();
-    }
-  }
 }

@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
   constructor( private authService: AuthenticationService, private galleryService: GalleryService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.route.url[0])
     this.galleryService.getGalleries().subscribe((data) => {
       this.galleries = data;
     })

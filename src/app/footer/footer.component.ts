@@ -15,15 +15,30 @@ import { Gallery } from '../models/gallery.model';
 export class FooterComponent implements OnInit {
   user: Observable<firebase.User>;
   galleries: Gallery[];
+
+  addingImage: boolean;
+  addingGallery: boolean;
+  removingGallery: boolean;
+  editingGallery: boolean;
+  viewingGallery: boolean;
+
+  galleryName: string;
   constructor( private authService: AuthenticationService, private galleryService: GalleryService, private router: Router, private route: ActivatedRoute) {
         // force route reload whenever params change;
         this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit() {
+    this.galleryName = this.route.snapshot.params.name;
+    console.log(this.route.snapshot.params.name);
+    console.log(this.galleryName)
     this.galleryService.getGalleries().subscribe((data) => {
       this.galleries = data;
     })
+    this.addingImage = false;
+    this.addingGallery = false;
+    this.removingGallery = false;
+    this.editingGallery = false;
     this.user = this.authService.authUser();
     jquery('.collapser').on('click', function(){
       if(window.innerWidth < 768 && (jquery("button.navbar-toggler").hasClass("collapsed")) === false) {
@@ -53,5 +68,33 @@ export class FooterComponent implements OnInit {
 
   openModal() {
     jquery('div.control-panel-modal').addClass('show');
+  }
+
+  addImages() {
+    this.addingImage = true;
+    this.addingGallery = false;
+    this.removingGallery = false;
+    this.editingGallery = false;
+  }
+
+  addGallery() {
+    this.addingImage = false;
+    this.addingGallery = true;
+    this.removingGallery = false;
+    this.editingGallery = false;
+  }
+
+  removeGallery() {
+    this.addingImage = false;
+    this.addingGallery = false;
+    this.removingGallery = true;
+    this.editingGallery = false;
+  }
+
+  editGallery() {
+    this.addingImage = false;
+    this.addingGallery = false;
+    this.removingGallery = false;
+    this.editingGallery = true;
   }
 }

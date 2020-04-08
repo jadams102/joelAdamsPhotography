@@ -1,6 +1,3 @@
-<button *ngIf='!addingImages' class="btn btn-info" (click)=toggleAddingImages()>Add Images to {{galleryName}}</button>
-<button *ngIf='addingImages' class="btn btn-info" (click)=toggleAddingImages()>Close Upload Window</button>
-<div *ngIf='addingImages' class="card">
   <div class="card-body">
     <div class="card-title">
       <h2 class="heading">Upload New Images to {{galleryName}}</h2>
@@ -28,4 +25,3 @@
       <button class="btn btn-primary" (click)="uploadFiles(title, description, gallery)">Upload Selected Image</button>
     </div>
   </div>
-</div>
