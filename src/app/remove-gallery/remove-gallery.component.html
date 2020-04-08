@@ -1,9 +1,10 @@
 <div class="remove-gallery-modal">
+    <h2>Remove Gallery</h2>
+    <p>Only galleries that have had all images deleted can be removed</p>
 <div *ngFor="let gallery of galleryInfo">
-    <div class="gallery-listing">
-        <h4>{{gallery.title}}</h4>
-        <button class="btn btn-danger" *ngIf="canBeDeleted(gallery.title)" (click)="removeGallery(gallery.$key)">Remove Gallery</button>
-    </div>
+    <h4>{{gallery.title}}  -</h4>
+    <h4 *ngIf="!canBeDeleted(gallery.title)">  Has Images</h4>
+    <button class="btn btn-danger" *ngIf="canBeDeleted(gallery.title)" (click)="removeGallery(gallery.$key)">Remove Gallery</button>
 
 </div>
 </div>
