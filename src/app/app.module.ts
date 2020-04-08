@@ -24,6 +24,8 @@ import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfoli
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { EditGalleryComponent } from './edit-gallery/edit-gallery.component';
+import { RemoveGalleryComponent } from './remove-gallery/remove-gallery.component';
+import { FooterComponent } from './footer/footer.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -45,6 +47,8 @@ export const firebaseConfig = {
     PortfolioComponent,
     AddGalleryComponent,
     EditGalleryComponent,
+    RemoveGalleryComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

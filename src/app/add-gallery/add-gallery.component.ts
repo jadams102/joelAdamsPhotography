@@ -20,7 +20,6 @@ export class AddGalleryComponent implements OnInit {
     this.modalOpen = false;
     this.galleryService.getGalleries().subscribe((data)=> {
       this.galleries = data;
-      console.log(this.galleries);
     })
   }
 

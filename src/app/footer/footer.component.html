@@ -1,0 +1,37 @@
+<div class="edit-button">
+  <img id="edit-button" src="./../../assets/img/edit-icon-white.png" alt="">
+</div>
+<div class="control-panel" *ngIf='(user|async)?.uid'>
+  <div class="control-panel-modal container">
+    <div id="add-gallery">
+      <app-add-gallery></app-add-gallery>
+    </div>
+    <div id="remove-gallery">
+      <app-remove-gallery ></app-remove-gallery>
+    </div>
+    <div id="edit-gallery">
+      <app-edit-gallery></app-edit-gallery>
+    </div>
+    <div id="add-image">
+      <app-upload [galleryName]='(galleryName)'></app-upload>
+    </div>
+  </div>
+  <div class="controls">
+    <h5>Gallery</h5>
+    <div class="buttons row">
+      <a (click)="openModal()" class="button"><img src="./../../assets/img/add-gallery-icon-white.png" alt=""> <label>Add</label></a>
+      <a (click)="openModal()" class="button"><img src="./../../assets/img/remove-gallery-icon-white.png" alt=""><label>Remove</label></a>
+      <a (click)="openModal()" class="button"><img src="./../../assets/img/edit-gallery-icon-white.png" alt=""><label>Edit</label></a>
+    
+    </div>
+    <h5>Image</h5>
+    <div class="buttons row">
+      <a class="button">
+        <img (click)="openModal()" src="./../../assets/img/add-image-icon-white.png" alt=""><label>Add</label>
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="control-panel-bg"></div>
+
