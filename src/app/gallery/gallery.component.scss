@@ -87,17 +87,40 @@
             li {
                 break-inside: avoid-column;
                 margin-bottom: 10px;
+                position: relative;
                 //display: none;
                 img {
                     max-width: 100%;
                     cursor: pointer;
                     opacity: 0;
                     transition: all .2s ease-in-out;
-                    &:hover {
-                        outline: solid red 4px;
+                    &.portfolio-image {
+                        &:hover {
+                            outline: red g 4px;
+                        }
+                        &:active {
+                            transform: scale(0.9);
+                        }
                     }
-                    &:active {
-                        transform: scale(0.9);
+ 
+                }
+
+                div.img-admin {
+                    position: absolute;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 8px;
+                    img {
+                        transition: all .2s ease-in;
+                        width: 40px;
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                        &:active {
+                            transform: scale(0.9);
+                        }
                     }
                 }
             }
