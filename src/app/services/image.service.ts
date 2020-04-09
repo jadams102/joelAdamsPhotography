@@ -45,6 +45,14 @@ export class ImageService {
     return this.database.object('galleries/' + galleryPath + '/' + key);
   }
 
+  updateImage(localUpdatedImage: Upload) {
+    let galleryEntry = this.getImageById(localUpdatedImage.gallery, localUpdatedImage.$key);
+    galleryEntry.update({
+      name: localUpdatedImage.name,
+      description: localUpdatedImage.description
+    })
+  }
+
   removeImage(image: Upload) {
     let imageEntry = this.getImageById(image.gallery.toLowerCase(), image.$key);
     imageEntry.remove();
