@@ -26,6 +26,7 @@ import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { EditGalleryComponent } from './edit-gallery/edit-gallery.component';
 import { RemoveGalleryComponent } from './remove-gallery/remove-gallery.component';
 import { FooterComponent } from './footer/footer.component';
+import { GalleryImageEditComponent } from './gallery-image-edit/gallery-image-edit.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
@@ -49,6 +50,7 @@ export const firebaseConfig = {
     EditGalleryComponent,
     RemoveGalleryComponent,
     FooterComponent,
+    GalleryImageEditComponent,
   ],
   imports: [
     BrowserModule,
