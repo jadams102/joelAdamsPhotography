@@ -13,12 +13,10 @@
         <input type="file" (change)="handleFiles($event)" class="form-control">
       </div>
       <div class="form-group">
-        <label>Title</label>
-        <input type="text" [(ngModel)]="title" placeholder="Title..." class="form-control">
+        <input type="text" [(ngModel)]="title" placeholder="Title" class="form-control">
       </div>
       <div class="form-group">
-        <label>Description</label>
-        <textarea type="text" [(ngModel)]="Description" placeholder="Title..." class="form-control"></textarea>
+        <textarea type="text" [(ngModel)]="Description" placeholder="Description" class="form-control"></textarea>
       </div>
       <!-- <div *ngIf='galleries' class="form-group">
         <label>Gallery</label>
