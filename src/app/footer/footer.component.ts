@@ -45,9 +45,6 @@ export class FooterComponent implements OnInit {
       jquery('.navbar-toggler').click(); //bootstrap 4.x
       }
     });
-    jquery('#edit-button').on('click', function() {
-      jquery('div.control-panel').toggleClass('show');
-    })
   }
 
   logOut() {
@@ -68,6 +65,10 @@ export class FooterComponent implements OnInit {
 
   openModal() {
     jquery('div.control-panel-modal').addClass('show');
+  }
+
+  togglePanel() {
+    jquery('div.control-panel').toggleClass('show');
   }
 
   addImages() {

@@ -1,4 +1,4 @@
-<div class="edit-button">
+<div *ngIf='(user|async)?.uid' (click)="togglePanel()" class="edit-button">
   <img id="edit-button" src="./../../assets/img/edit-icon-white.png" alt="">
 </div>
 <div class="control-panel" *ngIf='(user|async)?.uid'>
