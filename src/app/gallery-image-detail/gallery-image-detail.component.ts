@@ -7,11 +7,11 @@ import { Observable } from 'rxjs/Observable';
 import * as jquery from 'jquery';
 
 @Component({
-  selector: 'app-portfolio-image-detail',
-  templateUrl: './portfolio-image-detail.component.html',
-  styleUrls: ['./portfolio-image-detail.component.scss']
+  selector: 'app-gallery-image-detail',
+  templateUrl: './gallery-image-detail.component.html',
+  styleUrls: ['./gallery-image-detail.component.scss']
 })
-export class PortfolioImageDetailComponent implements OnInit {
+export class GalleryImageDetailComponent implements OnInit {
 
   constructor(private authService: AuthenticationService, private imageService: ImageService, private route: ActivatedRoute, private router: Router,) { }
 

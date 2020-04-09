@@ -20,7 +20,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { config }  from './api-keys';
 import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
-import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
+import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { EditGalleryComponent } from './edit-gallery/edit-gallery.component';
@@ -43,7 +43,7 @@ export const firebaseConfig = {
     AboutComponent,
     UploadComponent,
     LoginComponent,
-    PortfolioImageDetailComponent,
+    GalleryImageDetailComponent,
     GalleryComponent,
     AddGalleryComponent,
     EditGalleryComponent,
