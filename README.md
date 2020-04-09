@@ -18,6 +18,7 @@ export const config = {
 };
 ```
 Run `ng serve` on root directory
+Navigate to `http://localhost:4200/#/` and enjoy!
 
 ### Prerequisites
 
