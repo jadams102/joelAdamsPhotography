@@ -5,7 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'gallery/:name',
-    component: PortfolioComponent
+    component: GalleryComponent
   },
   {
     path: ':name/:id',

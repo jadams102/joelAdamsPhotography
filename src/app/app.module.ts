@@ -21,7 +21,7 @@ import { config }  from './api-keys';
 import { UploadComponent } from './upload/upload.component';
 import { LoginComponent } from './login/login.component';
 import { PortfolioImageDetailComponent } from './portfolio-image-detail/portfolio-image-detail.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { GalleryComponent } from './gallery/gallery.component';
 import { AddGalleryComponent } from './add-gallery/add-gallery.component';
 import { EditGalleryComponent } from './edit-gallery/edit-gallery.component';
 import { RemoveGalleryComponent } from './remove-gallery/remove-gallery.component';
@@ -44,7 +44,7 @@ export const firebaseConfig = {
     UploadComponent,
     LoginComponent,
     PortfolioImageDetailComponent,
-    PortfolioComponent,
+    GalleryComponent,
     AddGalleryComponent,
     EditGalleryComponent,
     RemoveGalleryComponent,

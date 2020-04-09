@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 import * as jquery from 'jquery';
 
 @Component({
-  selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.scss']
 })
-export class PortfolioComponent implements OnInit, AfterViewInit {
+export class GalleryComponent implements OnInit, AfterViewInit {
 
   galleryName: string;
   images: Upload[];
