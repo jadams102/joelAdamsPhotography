@@ -34,11 +34,12 @@ export class UploadComponent implements OnInit {
     this.files = event.target.files
   }
 
-  uploadFiles(title: string){
+  uploadFiles(title: string, description: string){
     this.uploadService.setUploadPath(this.galleryName.toLowerCase());
     const filesToUpload = this.files;
       this.upload = new Upload(filesToUpload[0]);
       this.upload.name = title;
+      this.upload.description = description;
       this.upload.gallery = this.galleryName;
       this.uploadService.uploadFiles(this.upload);
   }

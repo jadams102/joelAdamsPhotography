@@ -88,7 +88,9 @@ export class GalleryComponent implements OnInit, AfterViewInit {
   }
 
   deleteImage(image) {
-    this.imageService.removeImage(image);
+    if(confirm("Are you sure you want to delete this image?")){
+      this.imageService.removeImage(image);
+    }
   }
 
   isLoaded() {

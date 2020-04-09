@@ -33,7 +33,7 @@
       <li *ngFor="let image of images; let i = index">
         <div class="img-admin">
           <img src="../../assets/img/edit-icon-white.png" alt="">
-          <img src="../../assets/img/remove-icon-red.png" alt="">
+          <img (click)="deleteImage(image)" src="../../assets/img/remove-icon-red.png" alt="">
         </div>
         <a (click)='goToImageDetail(image, i)'><img class="portfolio-image" (load)='isLoaded()' src="{{image.url}}"></a>
         <div *ngIf='(user|async)?.uid'>
