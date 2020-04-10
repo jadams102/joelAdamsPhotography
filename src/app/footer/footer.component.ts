@@ -30,8 +30,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.galleryName = this.route.snapshot.params.name;
-    console.log(this.route.snapshot.params.name);
-    console.log(this.galleryName)
     this.galleryService.getGalleries().subscribe((data) => {
       this.galleries = data;
     })

@@ -28,14 +28,22 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this.authService.authUser();
     this.galleryName = this.route.snapshot.params.name;
     this.imagesLoaded = 0;
     this.imageService.setGallery(this.galleryName.toLowerCase());
     this.imageService.getGallery().subscribe(data => {
-      if (data.length === 0) {
-        this.router.navigate(['/'])
-      }
       this.images = data;
+      this.user.subscribe((data)=>{
+        console.log(data);
+        console.log(this.images.length)
+        if (this.images.length === 0 && data == null) {
+          console.log('great success')
+          this.router.navigate(['/'])
+        }
+      })
+
+
       if (this.images.length === 0) {
         jquery('#loading-gallery').fadeOut(800, function() {
           jquery('ul#gallery-list img').css('opacity', '1');
@@ -43,7 +51,6 @@ export class GalleryComponent implements OnInit {
       }
       this.imageToEdit = this.images[0];
     });
-    this.user = this.authService.authUser();;
 
   }
 
