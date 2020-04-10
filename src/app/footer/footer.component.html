@@ -22,7 +22,7 @@
     <div class="buttons row">
       <a (click)="openModal(); addGallery()" class="button"><img src="./../../assets/img/add-gallery-icon-white.png" alt=""> <label>Add</label></a>
       <a (click)="openModal(); removeGallery()" class="button"><img src="./../../assets/img/remove-gallery-icon-white.png" alt=""><label>Remove</label></a>
-      <a (click)="openModal(); editGallery()" class="button"><img src="./../../assets/img/edit-gallery-icon-white.png" alt=""><label>Edit</label></a>
+      <a *ngIf="galleryName" (click)="openModal(); editGallery()" class="button"><img src="./../../assets/img/edit-gallery-icon-white.png" alt=""><label>Edit</label></a>
     </div>
     <div *ngIf="galleryName">
       <h5>Image</h5>
