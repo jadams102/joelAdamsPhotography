@@ -1,6 +1,6 @@
 <div *ngIf='(user|async)?.uid' id="edit-modal-container">
   <app-gallery-image-edit [imageToEdit]="imageToEdit"></app-gallery-image-edit>
-  <div class="edit-modal-bg"></div>
+  <div (click)="toggleEditImageModal()" class="edit-modal-bg"></div>
 </div>
 <div class="gallery-section">
   <div class="container">

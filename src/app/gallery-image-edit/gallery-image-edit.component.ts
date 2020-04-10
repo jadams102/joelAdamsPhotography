@@ -21,7 +21,7 @@ export class GalleryImageEditComponent implements OnInit {
   }
 
   closeModal() {
-    jquery('div#edit-modal-container').css('opacity', 0).delay(500).hide();
+    jquery('div#edit-modal-container').toggleClass('show')
   }
 
 }

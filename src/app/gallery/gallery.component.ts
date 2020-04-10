@@ -41,9 +41,10 @@ export class GalleryComponent implements OnInit {
           jquery('ul#gallery-list img').css('opacity', '1');
         });
       }
+      this.imageToEdit = this.images[0];
     });
     this.user = this.authService.authUser();;
-    this.imageToEdit = this.images[0];
+
   }
 
   goToImageDetail(clickedImage, i) {
@@ -83,6 +84,11 @@ export class GalleryComponent implements OnInit {
 
   editImage(image) {
     this.imageToEdit = image;
+    jquery('div#edit-modal-container').toggleClass('show')
+  }
+
+  toggleEditImageModal() {
+    jquery('div#edit-modal-container').toggleClass('show')
   }
 
   deleteImage(image) {
