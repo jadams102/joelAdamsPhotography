@@ -62,11 +62,19 @@ export class FooterComponent implements OnInit {
   }
 
   openModal() {
-    jquery('div.control-panel-modal').addClass('show');
+    jquery('div#control-panel-modal').addClass('show');
+    jquery('div.control-panel-bg').addClass('show')
+  }
+
+  closeModal() {
+    jquery('div#control-panel-modal').removeClass('show');
+    jquery('div.control-panel-bg').removeClass('show');
   }
 
   togglePanel() {
     jquery('div.control-panel').toggleClass('show');
+    jquery('div.control-panel-bg').removeClass('show');
+    jquery('div#control-panel-modal').removeClass('show');
   }
 
   addImages() {
