@@ -1,0 +1,20 @@
+div.edit-image-modal {
+    position: fixed;
+    background: white;
+    width: 100%;
+    z-index: 1001;
+    padding: 10px 10px 20px 10px;
+    top: 30%;
+
+    @media(min-width: 768px) {
+        width: 500px;
+        left: 50%;
+        margin-left: -250px;
+    }
+    img {
+        position: absolute;
+        right: 10px;
+        width: 40px;
+    }
+
+}

@@ -1,3 +1,11 @@
-<p>
-  gallery-image-edit works!
-</p>
+<div *ngIf="imageToEdit" class="edit-image-modal">
+    <img src="../../assets/img/remove-icon-red.png" (click)="closeModal()" alt="">
+    <h2>Edit Image Details</h2>
+    <div class="form-group">
+      <input [(ngModel)]="imageToEdit.name" type="text" class="form-control" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <textarea [(ngModel)]="imageToEdit.description" type="text" class="form-control" placeholder="Description"></textarea>
+    </div>
+    <button class="btn btn-info" (click)="updateImage(imageToEdit)">Save Changes</button>
+</div>

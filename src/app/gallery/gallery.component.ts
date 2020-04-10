@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../services/image.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Upload } from '../models/upload.model';
@@ -11,7 +11,7 @@ import * as jquery from 'jquery';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent implements OnInit, AfterViewInit {
+export class GalleryComponent implements OnInit {
 
   galleryName: string;
   images: Upload[];
@@ -19,6 +19,7 @@ export class GalleryComponent implements OnInit, AfterViewInit {
   imagesLoaded: number;
   imagesLoadedPercentage: number;
   imageToDetail: Upload;
+  imageToEdit: Upload;
   imageElement: any;
 
   constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { 
@@ -42,11 +43,7 @@ export class GalleryComponent implements OnInit, AfterViewInit {
       }
     });
     this.user = this.authService.authUser();;
-
-  }
-
-  ngAfterViewInit() {
-
+    this.imageToEdit = this.images[0];
   }
 
   goToImageDetail(clickedImage, i) {
@@ -56,14 +53,12 @@ export class GalleryComponent implements OnInit, AfterViewInit {
     jquery(".image-detail-container").delay(300).slideDown();
     window.scrollTo({top: 0, behavior: 'smooth'});
     }
-
   }
 
   nextImage() {
     if (this.imageElement === this.images.length - 1) {
       this.imageElement = 0;
       this.imageToDetail = this.images[this.imageElement];
-      
     } else {
       this.imageElement++;
       this.imageToDetail = this.images[this.imageElement];
@@ -84,7 +79,10 @@ export class GalleryComponent implements OnInit, AfterViewInit {
 
   closeImageDetail() {
     jquery(".image-detail-container").slideUp();
+  }
 
+  editImage(image) {
+    this.imageToEdit = image;
   }
 
   deleteImage(image) {

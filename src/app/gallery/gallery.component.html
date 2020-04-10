@@ -1,3 +1,7 @@
+<div *ngIf='(user|async)?.uid' id="edit-modal-container">
+  <app-gallery-image-edit [imageToEdit]="imageToEdit"></app-gallery-image-edit>
+  <div class="edit-modal-bg"></div>
+</div>
 <div class="gallery-section">
   <div class="container">
     <h1 class="gallery-title">{{galleryName}}</h1>
@@ -32,7 +36,7 @@
     <ul id="gallery-list">
       <li *ngFor="let image of images; let i = index">
         <div class="img-admin">
-          <img src="../../assets/img/edit-icon-white.png" alt="">
+          <img (click)="editImage(image)"src="../../assets/img/edit-icon-white.png" alt="">
           <img (click)="deleteImage(image)" src="../../assets/img/remove-icon-red.png" alt="">
         </div>
         <a (click)='goToImageDetail(image, i)'><img class="portfolio-image" (load)='isLoaded()' src="{{image.url}}"></a>
