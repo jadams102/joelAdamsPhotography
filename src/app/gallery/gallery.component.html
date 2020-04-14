@@ -35,15 +35,11 @@
 
     <ul id="gallery-list">
       <li *ngFor="let image of images; let i = index">
-        <div class="img-admin">
+        <div *ngIf='(user|async)?.uid' class="img-admin">
           <img (click)="editImage(image)"src="../../assets/img/edit-icon-white.png" alt="">
           <img (click)="deleteImage(image)" src="../../assets/img/remove-icon-red.png" alt="">
         </div>
         <a (click)='goToImageDetail(image, i)'><img class="portfolio-image" (load)='isLoaded()' src="{{image.url}}"></a>
-        <div *ngIf='(user|async)?.uid'>
-
-          <!-- <button class="btn btn-danger" (click)='deleteImage(image)'>Delete Image</button> -->
-        </div>
       </li>
     </ul>
 
