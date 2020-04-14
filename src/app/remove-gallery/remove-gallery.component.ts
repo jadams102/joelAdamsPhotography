@@ -12,11 +12,14 @@ import { Router } from '@angular/router';
 })
 export class RemoveGalleryComponent implements OnInit {
   galleryInfo: Gallery[];
-  cannotBeDeleted: boolean[];
+  cannotBeDeleted: string[];
+  removeCheckComplete: boolean;
+  galleriesChecked: number;
 
   constructor(private galleryService: GalleryService, private imageService: ImageService, private router: Router) { }
 
   ngOnInit() {
+    this.galleriesChecked = 0;
     this.cannotBeDeleted = [];
     this.galleryService.getGalleries().subscribe((data) => {
       this.galleryInfo = data;
@@ -31,9 +34,21 @@ export class RemoveGalleryComponent implements OnInit {
 
   canBeDeleted(galleryTitle) {
     if(this.cannotBeDeleted.includes(galleryTitle)) {
+      this.galleriesChecked++;
+      this.completeCheck();
       return false;
     } else {
+      this.galleriesChecked++;
+      this.completeCheck();
       return true;
+    }
+  }
+
+  completeCheck() {
+    if (this.galleriesChecked === this.galleryInfo.length) {
+      this.removeCheckComplete = true;
+    } else {
+      this.removeCheckComplete = false;
     }
   }
 

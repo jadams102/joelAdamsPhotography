@@ -23,11 +23,11 @@ export class NavbarComponent implements OnInit {
       this.galleries = data;
     })
     this.user = this.authService.authUser();
-      jquery('.collapser').on('click', function(){
-        if(window.innerWidth < 768 && jquery("button.navbar-toggler").hasClass("collapsed") === false) {
-        jquery('.navbar-toggler').click(); //bootstrap 4.x
-        }
-      });
+    jquery('.collapser').on('click', function(){
+      if(window.innerWidth < 768 && jquery("button.navbar-toggler").hasClass("collapsed") === false) {
+      jquery('.navbar-toggler').click(); //bootstrap 4.x
+      }
+    });
   }
 
   logOut() {
