@@ -12,6 +12,7 @@
       </div>
       <app-gallery-image-detail [imageToDisplay]="imageToDetail" id='image-detail' (click)='closeImageDetail()'>
       </app-gallery-image-detail>
+      <div (click)="closeImageDetail()" class="modal-bg"></div>
     </div>
     <div id="loading-gallery">
       <div class="progress">

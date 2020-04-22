@@ -1,5 +1,5 @@
-<h1 class="card-title">{{imageToDisplay?.name}}</h1>
 <img id="detail-image" src="{{imageToDisplay?.url}}" alt="">
 <div *ngIf='(user|async)?.uid'>
   <button class="btn btn-danger" (click)='deleteImage()'>Delete</button>
 </div>
+<h1 class="card-title">{{imageToDisplay?.name}}</h1>

@@ -28,8 +28,26 @@ div#edit-modal-container {
         }
         .image-detail-container {
             display: none;
-            transition: all .2s ease-in-out;
             margin-bottom: 20px;
+            app-gallery-image-detail {
+                position: fixed;
+                z-index: 2500;
+                img {
+                    max-height: 85vh;
+                }
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+            div.modal-bg {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.75);
+                z-index: 2000;
+                top: 0;
+                left: 0;
+            }
             div.controls {
                 position: absolute;
                 display: flex;
@@ -37,8 +55,8 @@ div#edit-modal-container {
                 width: 100%;
                 height: auto;
                 margin: 0 auto;
-                top: 30%;
-                z-index: 100;
+                top: 90%;
+                z-index: 3100;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 @media screen and (min-width: 768px) {
@@ -46,11 +64,11 @@ div#edit-modal-container {
                     top: 60%
                 }
                 .ctrl-right {
-                    margin-right: 60px;
+                    margin-right: 20px;
                 }
 
                 .ctrl-left {
-                    margin-left: 60px;
+                    margin-left: 20px;
                 }
 
                 .ctrl-right, .ctrl-left{

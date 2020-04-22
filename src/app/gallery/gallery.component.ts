@@ -58,8 +58,7 @@ export class GalleryComponent implements OnInit {
     if (this.imagesLoadedPercentage === 100) {
     this.imageToDetail = clickedImage;
     this.imageElement = i;
-    jquery(".image-detail-container").delay(300).slideDown();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    jquery(".image-detail-container").css('opacity','1').delay(500).css('display','block');
     }
   }
 
@@ -86,7 +85,7 @@ export class GalleryComponent implements OnInit {
   }
 
   closeImageDetail() {
-    jquery(".image-detail-container").slideUp();
+    jquery(".image-detail-container").css('opacity','0').delay(500).css('display','none');
   }
 
   editImage(image) {
