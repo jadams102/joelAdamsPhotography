@@ -59,6 +59,7 @@ export class GalleryComponent implements OnInit {
     this.imageToDetail = clickedImage;
     this.imageElement = i;
     jquery(".image-detail-container").css('opacity','1').delay(500).css('display','block');
+    jquery("html,body").css('overflow','hidden')
     }
   }
 
@@ -86,6 +87,7 @@ export class GalleryComponent implements OnInit {
 
   closeImageDetail() {
     jquery(".image-detail-container").css('opacity','0').delay(500).css('display','none');
+    jquery("html,body").css('overflow','visible')
   }
 
   editImage(image) {
