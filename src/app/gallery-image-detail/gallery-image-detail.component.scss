@@ -5,12 +5,12 @@ h1 {
     width: 200px;
     margin-left: -100px;
     left: 50%;
-    top: 85%;
+    top: 81%;
     color: white;
-    margin-top: 10px;
     font-size: 20px;
     @media screen and (min-width: 768px) {
-        font-size: 30px;
+        text-align: left;
+        font-size: 20px;
         top: 17px;
         left: 10%;
     }

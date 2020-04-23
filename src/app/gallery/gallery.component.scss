@@ -47,6 +47,28 @@ div#edit-modal-container {
                 z-index: 2000;
                 top: 0;
                 left: 0;
+                img.ctrl-close {
+                    position: fixed;
+                    width: 30px;
+                    left: 50%;
+                    margin-left: -15px;
+                    top: 93%;
+                    @media(min-width: 768px) {
+                        top: 20px;
+                        left: 90%;
+                    }
+                    opacity: 0.35;
+                    cursor: pointer;
+                    transition: all .2s ease-in-out;
+                    &:hover {
+                        opacity: 0.65;
+                        transform: scale(1.1);
+                    }
+                    &:active {
+                        opacity: 0.65;
+                        transform: scale(0.9);
+                    }
+                }
             }
             div.controls {
                 position: fixed;
@@ -55,7 +77,7 @@ div#edit-modal-container {
                 width: 100%;
                 height: auto;
                 margin: 0 auto;
-                top: 90%;
+                top: 85%;
                 z-index: 3100;
                 left: 50%;
                 transform: translate(-50%, -50%);
@@ -71,7 +93,9 @@ div#edit-modal-container {
                     margin-left: 20px;
                 }
 
-                .ctrl-right, .ctrl-left{
+
+
+                .ctrl-right, .ctrl-left, .ctrl-close{
                     opacity: 0.35;
                     width: 50px;
                     cursor: pointer;
