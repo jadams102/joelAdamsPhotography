@@ -6,9 +6,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 import { ImageService } from './services/image.service';
 import { AuthenticationService } from './services/authentication.service';
 import { GalleryService } from './services/gallery.service';
@@ -18,15 +18,15 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { config }  from './api-keys';
-import { UploadComponent } from './upload/upload.component';
-import { LoginComponent } from './login/login.component';
-import { GalleryImageDetailComponent } from './gallery-image-detail/gallery-image-detail.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { AddGalleryComponent } from './add-gallery/add-gallery.component';
-import { EditGalleryComponent } from './edit-gallery/edit-gallery.component';
-import { RemoveGalleryComponent } from './remove-gallery/remove-gallery.component';
+import { UploadComponent } from './pages/gallery/upload/upload.component';
+import { LoginComponent } from './pages/login/login.component';
+import { GalleryImageDetailComponent } from './pages/gallery/gallery-image-detail/gallery-image-detail.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { AddGalleryComponent } from './pages/gallery/add-gallery/add-gallery.component';
+import { EditGalleryComponent } from './pages/gallery/edit-gallery/edit-gallery.component';
+import { RemoveGalleryComponent } from './pages/gallery/remove-gallery/remove-gallery.component';
 import { FooterComponent } from './footer/footer.component';
-import { GalleryImageEditComponent } from './gallery-image-edit/gallery-image-edit.component';
+import { GalleryImageEditComponent } from './pages/gallery/gallery-image-edit/gallery-image-edit.component';
 
 export const firebaseConfig = {
   apiKey: config.apiKey,
