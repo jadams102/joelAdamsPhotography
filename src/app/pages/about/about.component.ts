@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
     let galleryArry = [];
     for(let i = 1; i <= this.slideLimit; i++) {
       let uploadEntry = new Upload();
-      uploadEntry.url="../../../assets/img/slideshow/about/img-" + i + "-min.jpg";
+      uploadEntry.url="../../../assets/img/about/img-" + i + ".jpg";
       galleryArry.push(uploadEntry);
     }
     this.galleryImages = galleryArry;
