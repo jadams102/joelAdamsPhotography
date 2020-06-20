@@ -12,7 +12,6 @@ export class UploadService {
 
   setUploadPath(galleryName: string) {
     this.basePath = '/galleries/' + galleryName;
-    console.log(this.basePath);
   }
 
   uploadFiles(upload: Upload) {
@@ -45,6 +44,6 @@ deleteFile(name, gallery) {
 
 private saveFileData(upload: Upload) {
     this.db.list(`${this.basePath}/`).push(upload);
-    console.log("Files Saved: " + upload.url)
+    // console.log("Files Saved: " + upload.url)
   }
 }

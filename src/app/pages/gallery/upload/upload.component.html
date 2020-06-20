@@ -7,13 +7,13 @@
         Progress: {{upload?.progress}}% Complete
       </div>
       <div class="form-group">
-        <input type="file" (change)="handleFiles($event)" class="form-control">
+        <input type="file" #newFile (change)="handleFiles($event)" class="form-control">
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="title" placeholder="Title" class="form-control">
+        <input type="text" #newTitle placeholder="Title" class="form-control">
       </div>
       <div class="form-group">
-        <textarea type="text" [(ngModel)]="Description" placeholder="Description" class="form-control"></textarea>
+        <textarea type="text" #newDescription placeholder="Description" class="form-control"></textarea>
       </div>
       <!-- <div *ngIf='galleries' class="form-group">
         <label>Gallery</label>
@@ -21,5 +21,5 @@
           <option *ngFor='let gallery of galleries' value="{{gallery.name}}">{{gallery.name}}</option>
         </select>
       </div> -->
-      <button class="btn btn-primary" (click)="uploadFiles(title, description)">Upload Selected Image</button>
+      <button class="btn btn-primary" (click)="uploadFiles(newTitle.value, newDescription.value); newTitle.value = ''; newDescription.value = ''; newFile.value = ''">Upload Selected Image</button>
 

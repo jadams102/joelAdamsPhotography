@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Upload } from '../../../models/upload.model';
 import { UploadService } from '../../../services/upload.service'
 import { ImageService } from '../../../services/image.service';
+import * as jquery from 'jquery';
 
 @Component({
   selector: 'app-upload',
@@ -37,10 +38,11 @@ export class UploadComponent implements OnInit {
   uploadFiles(title: string, description: string){
     this.uploadService.setUploadPath(this.galleryName.toLowerCase());
     const filesToUpload = this.files;
-      this.upload = new Upload(filesToUpload[0]);
-      this.upload.name = title;
-      this.upload.description = description;
-      this.upload.gallery = this.galleryName;
-      this.uploadService.uploadFiles(this.upload);
+    this.upload = new Upload(filesToUpload[0]);
+    this.upload.name = title;
+    this.upload.description = description;
+    this.upload.gallery = this.galleryName;
+    this.uploadService.uploadFiles(this.upload);
+    jquery("img.portfolio-img").css('opacity','1');
   }
 }
