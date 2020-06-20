@@ -8,12 +8,6 @@ nav.navbar {
             background-color: transparent;
         }
     }
-
-    @media(min-width: 768px) {
-        .navbar-nav {
-            margin-bottom: 120px; 
-        }
-    }
     button.navbar-toggler {
         background-color: rgba(0, 0, 0, 0.45);
     }
@@ -52,7 +46,7 @@ nav.navbar {
         }
     }
     .navbar-brand img {
-        max-width: 28vw;
+        max-width: 120px;
         transition: all .2s ease-in-out;
         &:hover {
             transform: scale(1.1);

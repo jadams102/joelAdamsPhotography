@@ -5,6 +5,9 @@ import { Upload } from '../../models/upload.model';
 import { AuthenticationService } from '../../services/authentication.service';
 import { Observable } from 'rxjs';
 import * as jquery from 'jquery';
+import { Gallery } from 'src/app/models/gallery.model';
+import { GalleryService } from 'src/app/services/gallery.service';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-gallery',
@@ -13,6 +16,7 @@ import * as jquery from 'jquery';
 })
 export class GalleryComponent implements OnInit {
 
+  galleryObj: Gallery;
   galleryName: string;
   images: Upload[];
   user: Observable<firebase.User>;
@@ -22,7 +26,7 @@ export class GalleryComponent implements OnInit {
   imageToEdit: Upload;
   imageElement: any;
 
-  constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute) { 
+  constructor(private authService: AuthenticationService, private imageService: ImageService, private router: Router, private route: ActivatedRoute, private galleryService: GalleryService) { 
     // force route reload whenever params change;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
@@ -30,15 +34,19 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
     this.user = this.authService.authUser();
     this.galleryName = this.route.snapshot.params.name;
+    this.galleryService.getGalleries().subscribe((data) => {
+      for(let i = 0;  i < data.length; i++) {
+        if(data[i].title === this.galleryName) {
+          this.galleryObj = data[i];
+        }
+      }
+    });
     this.imagesLoaded = 0;
     this.imageService.setGallery(this.galleryName.toLowerCase());
     this.imageService.getGallery().subscribe(data => {
       this.images = data;
       this.user.subscribe((data)=>{
-        console.log(data);
-        console.log(this.images.length)
         if (this.images.length === 0 && data == null) {
-          console.log('great success')
           this.router.navigate(['/'])
         }
       })
@@ -46,7 +54,11 @@ export class GalleryComponent implements OnInit {
 
       if (this.images.length === 0) {
         jquery('#loading-gallery').fadeOut(800, function() {
-          jquery('ul#gallery-list img').css('opacity', '1');
+          jquery('.desc-box').css('opacity', '1');
+          jquery('ul#gallery-list').css('opacity', '1');
+          jquery('button.contact-btn').css('opacity', '1');
+          jquery('app-footer').css('opacity', '1');
+
         });
       }
       this.imageToEdit = this.images[0];
@@ -71,7 +83,6 @@ export class GalleryComponent implements OnInit {
       this.imageElement++;
       this.imageToDetail = this.images[this.imageElement];
     }
-    console.log(this.imageElement);
   }
 
   prevImage() {
@@ -82,7 +93,6 @@ export class GalleryComponent implements OnInit {
       this.imageElement--;
       this.imageToDetail = this.images[this.imageElement];
     }
-    console.log(this.imageElement);
   }
 
   closeImageDetail() {
@@ -109,7 +119,11 @@ export class GalleryComponent implements OnInit {
     if(this.imagesLoaded === this.images.length - 1) {
       this.imagesLoadedPercentage = 100;
       jquery('#loading-gallery').fadeOut(800, function() {
-        jquery('ul#gallery-list img').css('opacity', '1');
+        jquery('.desc-box').css('opacity', '1');
+        jquery('ul#gallery-list').css('opacity', '1');
+        jquery('button.contact-btn').css('opacity', '1');
+        jquery('app-footer').css('opacity', '1');
+      
       });
     } else {
       this.imagesLoaded = this.imagesLoaded + 1;

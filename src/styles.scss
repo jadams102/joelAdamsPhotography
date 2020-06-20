@@ -1,10 +1,30 @@
 body {
     font-family: apertura, sans-serif;
-    background-color: black;
+    background-attachment: fixed;
+    background-image: url('./assets/img/gallery-bg.jpg');
 
-a {
-    color: red;
-    cursor: pointer;
-}
+    a {
+        color: red;
+        cursor: pointer;
+    }
 
+    app-footer {
+        display: block;
+    }
+
+    button.contact-btn {
+        width: 100%;
+        outline: none;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        background-color: transparent;
+        transition: all 0.2s ease-in;
+        font-size: 20px;
+        &:hover{
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+    }
 }

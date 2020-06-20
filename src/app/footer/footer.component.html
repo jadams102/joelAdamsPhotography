@@ -3,7 +3,7 @@
 </div>
 <div class="control-panel" *ngIf='(user|async)?.uid'>
   <div id="control-panel-modal">
-    <img src="../../assets/img/close-icon-red.png" (click)="closeModal()" alt="" class="close-button">
+    <img src="../../assets/img/close-icon-red.png" alt="" (click)="closeModal()" class="close-button">
     <div *ngIf="addingGallery" id="add-gallery">
       <app-add-gallery></app-add-gallery>
     </div>
@@ -34,7 +34,27 @@
     </div>
   </div>
 </div>
-
 <div (click)="closeModal()" class="control-panel-bg">
-
 </div>
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <div *ngFor="let gallery of galleries" class="link">
+        <a (click)='toGallery(gallery.title)'>{{gallery.title}}</a>
+      </div>
+    </div>
+
+      <div class="footer-links">
+
+      <div class="link">
+        <a (click)="toAbout()">About</a>
+      </div>
+      <div class="link">
+        <a (click)="toContact()">Contact</a>
+      </div>
+    </div>
+    <p>&copy;	Joel Adams 2020</p>
+    <p> by <a href="https://www.joelradams.com/#/" target="_blank">Joel Adams Design</a> with <a href="https://angular.io/" target="_blank">Angular</a></p>
+
+  </div>
+</footer>

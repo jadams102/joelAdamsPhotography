@@ -17,14 +17,15 @@ div#edit-modal-container {
     }
 }
 .gallery-section {
-    background-attachment: fixed;
-    background-image: url('../../../assets/img/gallery-bg.jpg');
+    margin-bottom: 100px;
+
     .container {
-        min-height: 100vh;
-        padding-top: 65px;
-        padding-bottom: 70px;
-        @media only screen and (min-width: 425px) {
-            padding-top: 75px;
+        padding-top: 115px;
+        @media (min-width: 768px) {
+            padding-top: 120px;
+        }
+        @media (min-width: 990px) {
+            padding-top: 90px;
         }
         .image-detail-container {
             display: none;
@@ -113,16 +114,18 @@ div#edit-modal-container {
         }
     
         .gallery-title {
+            margin-top: 20px;
+            margin-bottom: 30px;
             font-size: 30px;
             text-align: right;
             text-transform: capitalize;
             color: white;
-            @media only screen and (min-width: 768px) {
+            @media (min-width: 768px) {
                 margin-top: 10px;
                 font-size: 50px;
             }
             
-            @media only screen and (min-width: 900px) {
+            @media (min-width: 990px) {
                 margin-top: 50px;
                 font-size: 70px;
             }
@@ -134,8 +137,19 @@ div#edit-modal-container {
             margin-top: 10px;
             z-index: 10;
         }
+        div.desc-box {
+            opacity: 0;
+            width: 100%;
+            h3 {
+                font-size: 16px;
+            }
+            @media (min-width: 990px) {
+                display: none;
+            }
+        }
     
         ul { 
+            opacity: 0;
             margin-top: 10px;
             padding:0; 
             width:100%; 
@@ -152,7 +166,6 @@ div#edit-modal-container {
                 img {
                     max-width: 100%;
                     cursor: pointer;
-                    opacity: 0;
                     transition: all .2s ease-in-out;
                     &.portfolio-image {
                         &:hover {
@@ -183,7 +196,23 @@ div#edit-modal-container {
                         }
                     }
                 }
+                &.desc-box {
+                    transition: all 0.2s ease-in;
+                    opacity: 0;
+                    display: none;
+                    @media(min-width: 990px) {
+                        display: block;
+                    }
+                    color: black;
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
             }
+        }
+        
+        > .contact-btn {
+            opacity: 0;
         }
     
         #loading-gallery{
@@ -331,4 +360,9 @@ div#edit-modal-container {
             }
         }
     }
+}
+
+app-footer {
+    opacity: 0;
+    display: block;
 }

@@ -1,105 +1,50 @@
-.contact-section {
-    background-image: url('../../../assets/img/contact-bg.jpg');
-    background-size: cover;
-}
-
-.container {
+div.contact-section {
     min-height: 100vh;
-    padding-top: 150px;
+    padding-top: 135px;
+    @media (min-width: 768px) {
+        padding-top: 130px;
+    }
+    @media (min-width: 990px) {
+        padding-top: 140px;
+    }
+
+    .row {
+        .card {
+            background-color: transparent;
+            color: white;
+        }
+        .info-box {
+            h1 {
+                font-size: 30px;
+                text-align: left;
+                text-transform: capitalize;
+                color: white;
+                @media only screen and (min-width: 768px) {
+                    font-size: 50px;
+                }
+                
+                @media only screen and (min-width: 900px) {
+                    font-size: 70px;
+                }
+            }
+            p {
+                color: white;
+            }
+            
+        }
+    }
 }
 
-
-a {
-    color: red;
-    cursor: pointer;
-}
-
-.card {
-    background-color: rgba(0, 0, 0, .8);
-    color: white;
-    border-style: none;
-    max-width: 100%;
-    float: right;
-}
-
-body {
-    background-color: black;
-    font-family: apertura, sans-serif;
-}
-
-.btn-send {
-    cursor: pointer;
-    font-size: 20px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+.contact-links {
     width: 100%;
-    background-color: transparent;
-    color: white;
-    border: white;
-    border-style: solid;
-    border-radius: 0px;
-}
-
-.btn-send:hover {
-    background-color: rgba(194, 18, 18, 0.8)
-}
-
-.btn-send:active {
-    background-color: rgba(95, 13, 13, 0.8)
-}
-
-h1 {
-    color: white;
-    text-align: right;
-}
-
-textarea {
-    min-height: 150px;
-    background-color: rgba(255, 255, 255, 0.8)
-}
-
-input {
-    background-color: rgba(255, 255, 255, 0.8)
-}
-
-.gallery-title {
-    font-size: 30px;
-    text-align: right;
-    color: white;
-}
-
-@media only screen and (min-width: 425px) {
-    .container {
-        padding-top: 75px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .contact-section {
-        background-image: url('../../../assets/img/contact-bg-mobile.jpg');
-    }
-    .container {
-        padding-top: 100px;
-    }
-    .gallery-title {
-        margin-top: 10px;
-        font-size: 50px;
-    }
-}
-
-@media only screen and (min-width: 700px) {
-    .card {
-        max-width: 50%;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .card {
-        max-width: 40%;
-    }
-
-        .gallery-title {
-        margin-top: 50px;
-        font-size: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    a {
+        max-width: 50px;
+        margin: 0px 20px 40px 20px;
+        img {
+            display: block;
+            width: 100%;
+        }
     }
 }

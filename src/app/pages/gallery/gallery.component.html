@@ -34,8 +34,16 @@
         <div class="sk-circle12 sk-child"></div>
       </div>
     </div>
-
+    <div class="desc-box">
+      <h3 *ngIf="galleryObj">{{galleryObj.shortDesc}}</h3>
+      <p *ngIf="galleryObj">{{galleryObj.longDesc}}</p>
+    </div>
     <ul id="gallery-list">
+
+      <li *ngIf="galleryObj.shortDesc || galleryObj.longDesc" class="desc-box">
+        <h3 *ngIf="galleryObj">{{galleryObj.shortDesc}}</h3>
+        <p *ngIf="galleryObj">{{galleryObj.longDesc}}</p>
+      </li>
       <li *ngFor="let image of images; let i = index">
         <div *ngIf='(user|async)?.uid' class="img-admin">
           <img (click)="editImage(image)"src="../../assets/img/edit-icon-white.png" alt="">
@@ -44,6 +52,8 @@
         <a (click)='goToImageDetail(image, i)'><img class="portfolio-image" (load)='isLoaded()' src="{{image.url}}"></a>
       </li>
     </ul>
+    <button class="contact-btn" routerLink="/contact">Contact</button>
+
 
   </div>
 </div>
